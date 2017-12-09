@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>GenericApp/EndDeviceEB</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>209</Column0><Column1>27</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      <PreferedWindows><Position>4</Position><ScreenPosX>7</ScreenPosX><ScreenPosY>101</ScreenPosY><Windows/></PreferedWindows></Workspace>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>915</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log><TerminalIO/><SourceBrowser/></Static>
+    <Windows>
+      
+    <Wnd2><Tabs><Tab><Identity>TabID-26698-9340</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-24777-24113</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-393-8935</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>GenericApp</ExpandedNode><ExpandedNode>GenericApp/App</ExpandedNode><ExpandedNode>GenericApp/HAL</ExpandedNode><ExpandedNode>GenericApp/HAL/Common</ExpandedNode><ExpandedNode>GenericApp/HAL/Me</ExpandedNode><ExpandedNode>GenericApp/HAL/Target</ExpandedNode><ExpandedNode>GenericApp/HAL/Target/CC2530EB</ExpandedNode><ExpandedNode>GenericApp/HAL/Target/CC2530EB/Drivers</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\GenericApp.h</Filename><XPos>0</XPos><YPos>61</YPos><SelStart>3168</SelStart><SelEnd>3168</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\include\comdef.h</Filename><XPos>0</XPos><YPos>80</YPos><SelStart>3878</SelStart><SelEnd>3878</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_drivers.h</Filename><XPos>0</XPos><YPos>64</YPos><SelStart>3653</SelStart><SelEnd>3653</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_key.c</Filename><XPos>0</XPos><YPos>491</YPos><SelStart>1312</SelStart><SelEnd>1312</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_key.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\my_hal_key_config.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1468</SelStart><SelEnd>1468</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_drivers.c</Filename><XPos>0</XPos><YPos>270</YPos><SelStart>8711</SelStart><SelEnd>8711</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>1062</YPos><SelStart>27480</SelStart><SelEnd>27480</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\hal\include\hal_defs.h</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>2652</SelStart><SelEnd>2652</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_body_detect.c</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>1265</SelStart><SelEnd>1265</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\audio.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_light_detect.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>176</SelStart><SelEnd>176</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_light_detect.c</Filename><XPos>0</XPos><YPos>15</YPos><SelStart>641</SelStart><SelEnd>641</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>74</YPos><SelStart>3266</SelStart><SelEnd>3266</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\GenericApp.c</Filename><XPos>0</XPos><YPos>610</YPos><SelStart>19701</SelStart><SelEnd>19701</SelEnd></Tab><ActiveTab>14</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\hal_step_motor.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>562</SelStart><SelEnd>562</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\body_detect_events.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>224</SelStart><SelEnd>224</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\GreenRoom.c</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>485</SelStart><SelEnd>485</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\audio.c</Filename><XPos>0</XPos><YPos>17</YPos><SelStart>658</SelStart><SelEnd>658</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-07881450><key>iaridepm.enu1</key></Toolbar-07881450></Sizes></Row0><Row1><Sizes><Toolbar-1c996a90><key>debuggergui.enu1</key></Toolbar-1c996a90></Sizes></Row1></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>463</Bottom><Right>300</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>295421</sizeHorzCY><sizeVertCX>235938</sizeVertCX><sizeVertCY>686854</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>169</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>171</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>252585</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>314623</sizeVertCY></Rect></Wnd2></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

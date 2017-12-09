@@ -1,0 +1,709 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         25/Nov/2017  22:13:50 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\Source\hal_step_motor.c                        #
+#    Command line       =  -f "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\Source\hal_step_motor.c" -D   #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC "D:\FileInstall\ZStack-CC2530 #
+#                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCla #
+#                          ssroom_NetWork 2.1\CC2530DB\EndDeviceEB\List\"     #
+#                          -lA "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\FileInstall\ZStack-CC2530-2.5.1 #
+#                          a_GreenRoom\Projects\zstack\Samples\GreenClassroom #
+#                          _NetWork 2.1\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\" -I "D:\FileInstall\ZStack-CC2530-2. #
+#                          5.1a_GreenRoom\Projects\zstack\Samples\GreenClassr #
+#                          oom_NetWork 2.1\CC2530DB\..\Source\" -I            #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRo #
+#                          om\Projects\zstack\Samples\GreenClassroom_NetWork  #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \high_level\" -I "D:\FileInstall\ZStack-CC2530-2.5 #
+#                          .1a_GreenRoom\Projects\zstack\Samples\GreenClassro #
+#                          om_NetWork 2.1\CC2530DB\..\..\..\..\..\Components\ #
+#                          mac\low_level\srf04\" -I                           #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\single_chip\" -I                          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\services\s #
+#                          addr\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\service #
+#                          s\sdata\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_ #
+#                          GreenRoom\Projects\zstack\Samples\GreenClassroom_N #
+#                          etWork 2.1\CC2530DB\..\..\..\..\..\Components\stac #
+#                          k\af\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k 2.1\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\stack\sec\ #
+#                          " -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoo #
+#                          m\Projects\zstack\Samples\GreenClassroom_NetWork   #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\List\hal_step_motor.lst   #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\Obj\hal_step_motor.r51    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork 2.1\Source\hal_step_motor.c
+      1          #include "hal_step_motor.h"
+      2          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          #include "hal_drivers.h"
+      4          #include "osal.h"
+      5          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+      6          static uint8 coil_state[] = {0x01, 0x03, 0x02, 0x06, 0x04,0x0c, 0x08, 0x09};
+   \                     coil_state:
+   \   000000                DS 8
+   \   000008                REQUIRE `?<Initializer for coil_state>`
+   \   000008                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          static uint16 target_steps = 0; //需要步进的步数,如果为0，表示一直转动下去
+   \                     target_steps:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          static uint16 stepped_steps = 0;  //已步进的步数
+   \                     stepped_steps:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          static uint8 stepping_direction = ANTI_CLOCK;  // 步进方向
+   \                     stepping_direction:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          static uint8 stepping_mode = STEP_MOTOR_NORMAL_MODE;
+   \                     stepping_mode:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          static uint8 curRoute = 0; //在来回工作模式下当前路径
+   \                     curRoute:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     12          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     13          STEP_MOTOR_ROUND_TRIP_ROOT_t route_trip_rout = {3,{ANTI_CLOCK, CLOCK_WISE,ANTI_CLOCK},{200,400,200}};
+   \                     route_trip_rout:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for route_trip_rout>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+     14          
+     15          static void move_to_next_step( void );
+     16          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          void hal_step_motor_init( void )
+   \                     hal_step_motor_init:
+     18          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19            P1SEL &= 0x0f; 
+   \   000000   53F40F       ANL     0xf4,#0xf
+     20            P1DIR |= 0x0f0;  
+   \   000003   43FEF0       ORL     0xfe,#0xf0
+     21            P1 = (P1 & 0x0f ); //绕组断电  
+   \   000006   53900F       ANL     0x90,#0xf
+     22          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P1SEL
+   \   00000C                REQUIRE P1DIR
+   \   00000C                REQUIRE _A_P1
+     23          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void hal_step_motor_start( uint8 direction, uint16 steps, uint16 speed )
+   \                     hal_step_motor_start:
+     25          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     26            stepping_direction = direction;
+   \   000006   90....       MOV     DPTR,#stepping_direction
+   \   000009   F0           MOVX    @DPTR,A
+     27            target_steps = steps;  
+   \   00000A   90....       MOV     DPTR,#target_steps
+   \   00000D   EA           MOV     A,R2
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   A3           INC     DPTR
+   \   000010   EB           MOV     A,R3
+   \   000011   12....       LCALL   ?Subroutine2 & 0xFFFF
+     28            stepped_steps = 0;
+     29            stepping_mode = STEP_MOTOR_NORMAL_MODE;
+   \                     ??CrossCallReturnLabel_2:
+   \   000014   90....       MOV     DPTR,#stepping_mode
+   \   000017   F0           MOVX    @DPTR,A
+     30            osal_start_reload_timer( Hal_TaskID, HAL_STEP_MOTOR_EVT,speed );
+   \   000018                ; Setup parameters for call to function osal_start_reload_timer
+   \   000018   7A10         MOV     R2,#0x10
+   \   00001A   FB           MOV     R3,A
+   \   00001B   90....       MOV     DPTR,#Hal_TaskID
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F9           MOV     R1,A
+   \   000020   12....       LCALL   ??osal_start_reload_timer?relay
+     31          }
+   \   000023   7F01         MOV     R7,#0x1
+   \   000025   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   90....       MOV     DPTR,#stepped_steps
+   \   000004   E4           CLR     A
+   \   000005   F0           MOVX    @DPTR,A
+   \   000006   A3           INC     DPTR
+   \   000007   F0           MOVX    @DPTR,A
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void hal_step_motor_round_trip(  uint16 speed )
+   \                     hal_step_motor_round_trip:
+     33          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     34            stepping_mode = STEP_MOTOR_ROUND_TRIP_MODE;
+   \   000004   90....       MOV     DPTR,#stepping_mode
+   \   000007   7401         MOV     A,#0x1
+   \   000009   F0           MOVX    @DPTR,A
+     35            curRoute = 0;
+   \   00000A   90....       MOV     DPTR,#curRoute
+   \   00000D   E4           CLR     A
+   \   00000E   F0           MOVX    @DPTR,A
+     36            stepped_steps = 0;
+   \   00000F   90....       MOV     DPTR,#stepped_steps
+   \   000012   F0           MOVX    @DPTR,A
+   \   000013   A3           INC     DPTR
+   \   000014   F0           MOVX    @DPTR,A
+     37            target_steps = route_trip_rout.steps[ curRoute ];
+   \   000015   90....       MOV     DPTR,#route_trip_rout + 4
+   \   000018   12....       LCALL   ?Subroutine1 & 0xFFFF
+     38            stepping_direction = route_trip_rout.dir[ curRoute ]; 
+   \                     ??CrossCallReturnLabel_0:
+   \   00001B   90....       MOV     DPTR,#route_trip_rout + 1
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   90....       MOV     DPTR,#stepping_direction
+   \   000022   F0           MOVX    @DPTR,A
+     39            osal_start_reload_timer( Hal_TaskID, HAL_STEP_MOTOR_EVT,speed );
+   \   000023                ; Setup parameters for call to function osal_start_reload_timer
+   \   000023   EA           MOV     A,R2
+   \   000024   FC           MOV     R4,A
+   \   000025   EB           MOV     A,R3
+   \   000026   FD           MOV     R5,A
+   \   000027   7A10         MOV     R2,#0x10
+   \   000029   7B00         MOV     R3,#0x0
+   \   00002B   90....       MOV     DPTR,#Hal_TaskID
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   F9           MOV     R1,A
+   \   000030   12....       LCALL   ??osal_start_reload_timer?relay
+     40          }
+   \   000033                REQUIRE ?Subroutine0
+   \   000033                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   90....       MOV     DPTR,#target_steps
+   \   000008   E8           MOV     A,R0
+   \   000009   F0           MOVX    @DPTR,A
+   \   00000A   A3           INC     DPTR
+   \   00000B   E9           MOV     A,R1
+   \   00000C   F0           MOVX    @DPTR,A
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     41          void hal_step_motor_stop( void )
+   \                     hal_step_motor_stop:
+     42          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     43            osal_stop_timerEx(Hal_TaskID, HAL_STEP_MOTOR_EVT);
+   \   000004                ; Setup parameters for call to function osal_stop_timerEx
+   \   000004   7A10         MOV     R2,#0x10
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   90....       MOV     DPTR,#Hal_TaskID
+   \   00000B   E0           MOVX    A,@DPTR
+   \   00000C   F9           MOV     R1,A
+   \   00000D   12....       LCALL   ??osal_stop_timerEx?relay
+     44          }
+   \   000010   80..         SJMP    ?Subroutine0
+     45          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     46          void hal_step_motor_drive( void )
+   \                     hal_step_motor_drive:
+     47          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     48           
+     49            switch( stepping_mode )
+   \   000004   90....       MOV     DPTR,#stepping_mode
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   6005         JZ      ??hal_step_motor_drive_0
+   \   00000A   14           DEC     A
+   \   00000B   6044         JZ      ??hal_step_motor_drive_1
+   \   00000D   8023         SJMP    ??hal_step_motor_drive_2
+     50            {
+     51            case STEP_MOTOR_NORMAL_MODE:
+     52              if( 0 == target_steps ) 
+   \                     ??hal_step_motor_drive_0:
+   \   00000F   90....       MOV     DPTR,#target_steps
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F8           MOV     R0,A
+   \   000014   A3           INC     DPTR
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F9           MOV     R1,A
+   \   000017   E8           MOV     A,R0
+   \   000018   49           ORL     A,R1
+   \   000019   6017         JZ      ??hal_step_motor_drive_2
+     53              {//target_steps == 0，则一直转动
+     54                break;
+     55              }
+     56              if( stepped_steps < target_steps )
+   \   00001B   90....       MOV     DPTR,#stepped_steps
+   \   00001E   C3           CLR     C
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   98           SUBB    A,R0
+   \   000021   A3           INC     DPTR
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   99           SUBB    A,R1
+   \   000024   5025         JNC     ??hal_step_motor_drive_3
+     57              {//还没有走完目标步数，则继续走
+     58                stepped_steps++;
+   \                     ??hal_step_motor_drive_4:
+   \   000026   90....       MOV     DPTR,#stepped_steps
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   2401         ADD     A,#0x1
+   \   00002C   F0           MOVX    @DPTR,A
+   \   00002D   A3           INC     DPTR
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   3400         ADDC    A,#0x0
+   \                     ??hal_step_motor_drive_5:
+   \   000031   F0           MOVX    @DPTR,A
+     59                break;
+     60              }
+     61              //走完所有步数，则停止步进
+     62              osal_stop_timerEx(Hal_TaskID, HAL_STEP_MOTOR_EVT); // 停止步进
+     63               P1 = (P1 & 0x0f ); //绕组断电  
+     64              return;
+     65            case STEP_MOTOR_ROUND_TRIP_MODE:
+     66              if( stepped_steps < target_steps )
+     67              {//还没有走完目标步数，则继续走
+     68                stepped_steps++;
+     69                break;
+     70              }
+     71              if( curRoute < route_trip_rout.roudCount )
+     72              {// 还没有走完所有路径，则断续下一条
+     73                curRoute++;
+     74                stepped_steps = 0;
+     75                target_steps = route_trip_rout.steps[ curRoute ];
+     76                stepping_direction = route_trip_rout.dir[ curRoute ];
+     77                break;
+     78              }
+     79              // 走完所有路径
+     80              osal_stop_timerEx(Hal_TaskID, HAL_STEP_MOTOR_EVT); // 停止步进
+     81              P1 = (P1 & 0x0f ); //绕组断电  
+     82              osal_set_event(Hal_TaskID,HAL_STEP_MOTOR_ROUND_TRIP_FINISH_EVT); //通知驱动层已走完   
+     83              return;    
+     84            }
+     85            // 步进
+     86            move_to_next_step();  
+   \                     ??hal_step_motor_drive_2:
+   \   000032   90....       MOV     DPTR,#stepping_direction
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   90....       MOV     DPTR,#??curState
+   \   000039   707C         JNZ     ??hal_step_motor_drive_6
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   04           INC     A
+   \   00003D   F0           MOVX    @DPTR,A
+   \   00003E   C3           CLR     C
+   \   00003F   9408         SUBB    A,#0x8
+   \   000041   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000043   65D0         XRL     A,PSW
+   \   000045   33           RLC     A
+   \   000046   407F         JC      ??hal_step_motor_drive_7
+   \   000048   E4           CLR     A
+   \   000049   807B         SJMP    ??hal_step_motor_drive_8
+   \                     ??hal_step_motor_drive_3:
+   \   00004B                ; Setup parameters for call to function osal_stop_timerEx
+   \   00004B   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00004E   02....       LJMP    ??hal_step_motor_drive_9 & 0xFFFF
+   \                     ??hal_step_motor_drive_1:
+   \   000051   90....       MOV     DPTR,#stepped_steps
+   \   000054   C082         PUSH    DPL
+   \   000056   90....       MOV     DPTR,#target_steps
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F8           MOV     R0,A
+   \   00005B   A3           INC     DPTR
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   F9           MOV     R1,A
+   \   00005E   7583..       MOV     DPH,#(stepped_steps >> 8) & 0xff
+   \   000061   D082         POP     DPL
+   \   000063   C3           CLR     C
+   \   000064   E0           MOVX    A,@DPTR
+   \   000065   98           SUBB    A,R0
+   \   000066   A3           INC     DPTR
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   99           SUBB    A,R1
+   \   000069   40BB         JC      ??hal_step_motor_drive_4
+   \   00006B   90....       MOV     DPTR,#route_trip_rout
+   \   00006E   E0           MOVX    A,@DPTR
+   \   00006F   F8           MOV     R0,A
+   \   000070   90....       MOV     DPTR,#curRoute
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   C3           CLR     C
+   \   000075   98           SUBB    A,R0
+   \   000076   502E         JNC     ??hal_step_motor_drive_10
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   04           INC     A
+   \   00007A   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00007D   90....       MOV     DPTR,#curRoute
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   FA           MOV     R2,A
+   \   000082   C3           CLR     C
+   \   000083   33           RLC     A
+   \   000084   F8           MOV     R0,A
+   \   000085   E4           CLR     A
+   \   000086   33           RLC     A
+   \   000087   F9           MOV     R1,A
+   \   000088   74..         MOV     A,#(route_trip_rout + 4) & 0xff
+   \   00008A   28           ADD     A,R0
+   \   00008B   F582         MOV     DPL,A
+   \   00008D   74..         MOV     A,#((route_trip_rout + 4) >> 8) & 0xff
+   \   00008F   39           ADDC    A,R1
+   \   000090   F583         MOV     DPH,A
+   \   000092   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000095   74..         MOV     A,#(route_trip_rout + 1) & 0xff
+   \   000097   2A           ADD     A,R2
+   \   000098   F582         MOV     DPL,A
+   \   00009A   74..         MOV     A,#((route_trip_rout + 1) >> 8) & 0xff
+   \   00009C   3400         ADDC    A,#0x0
+   \   00009E   F583         MOV     DPH,A
+   \   0000A0   E0           MOVX    A,@DPTR
+   \   0000A1   90....       MOV     DPTR,#stepping_direction
+   \   0000A4   808B         SJMP    ??hal_step_motor_drive_5
+   \                     ??hal_step_motor_drive_10:
+   \   0000A6                ; Setup parameters for call to function osal_stop_timerEx
+   \   0000A6   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   0000A9                ; Setup parameters for call to function osal_set_event
+   \   0000A9   7A20         MOV     R2,#0x20
+   \   0000AB   7B00         MOV     R3,#0x0
+   \   0000AD   90....       MOV     DPTR,#Hal_TaskID
+   \   0000B0   E0           MOVX    A,@DPTR
+   \   0000B1   F9           MOV     R1,A
+   \   0000B2   12....       LCALL   ??osal_set_event?relay
+   \   0000B5   802C         SJMP    ??hal_step_motor_drive_9
+   \                     ??hal_step_motor_drive_6:
+   \   0000B7   E0           MOVX    A,@DPTR
+   \   0000B8   14           DEC     A
+   \   0000B9   F0           MOVX    @DPTR,A
+   \   0000BA   C3           CLR     C
+   \   0000BB   9400         SUBB    A,#0x0
+   \   0000BD   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   0000BF   65D0         XRL     A,PSW
+   \   0000C1   33           RLC     A
+   \   0000C2   5003         JNC     ??hal_step_motor_drive_7
+   \   0000C4   7407         MOV     A,#0x7
+   \                     ??hal_step_motor_drive_8:
+   \   0000C6   F0           MOVX    @DPTR,A
+   \                     ??hal_step_motor_drive_7:
+   \   0000C7   E0           MOVX    A,@DPTR
+   \   0000C8   F8           MOV     R0,A
+   \   0000C9   33           RLC     A
+   \   0000CA   95E0         SUBB    A,0xE0 /* A   */
+   \   0000CC   F9           MOV     R1,A
+   \   0000CD   74..         MOV     A,#coil_state & 0xff
+   \   0000CF   28           ADD     A,R0
+   \   0000D0   F582         MOV     DPL,A
+   \   0000D2   74..         MOV     A,#(coil_state >> 8) & 0xff
+   \   0000D4   39           ADDC    A,R1
+   \   0000D5   F583         MOV     DPH,A
+   \   0000D7   E0           MOVX    A,@DPTR
+   \   0000D8   C4           SWAP    A
+   \   0000D9   54F0         ANL     A,#0xf0
+   \   0000DB   F8           MOV     R0,A
+   \   0000DC   E590         MOV     A,0x90
+   \   0000DE   540F         ANL     A,#0xf
+   \   0000E0   48           ORL     A,R0
+   \   0000E1   F590         MOV     0x90,A
+     87          }
+   \                     ??hal_step_motor_drive_9:
+   \   0000E3   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   0000E6                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A10         MOV     R2,#0x10
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   90....       MOV     DPTR,#Hal_TaskID
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F9           MOV     R1,A
+   \   000009   12....       LCALL   ??osal_stop_timerEx?relay
+   \   00000C   53900F       ANL     0x90,#0xf
+   \   00000F   22           RET
+     88          
+     89          static void move_to_next_step( void )
+     90          {
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     91            static int8 curState = 0; // 当前绕组通电状态  
+   \                     ??curState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for coil_state>`:
+   \   000000   01           DB 1
+   \   000001   03           DB 3
+   \   000002   02           DB 2
+   \   000003   06           DB 6
+   \   000004   04           DB 4
+   \   000005   0C           DB 12
+   \   000006   08           DB 8
+   \   000007   09           DB 9
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for route_trip_rout>`:
+   \   000000   03           DB 3
+   \   000001   00           DB 0
+   \   000002   01           DB 1
+   \   000003   00           DB 0
+   \   000004   C800         DW 200
+   \   000006   9001         DW 400
+   \   000008   C800         DW 200
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_step_motor_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_step_motor_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_step_motor_start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_step_motor_start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_step_motor_round_trip?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_step_motor_round_trip
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_step_motor_stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_step_motor_stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_step_motor_drive?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_step_motor_drive
+     92            if( ANTI_CLOCK == stepping_direction )
+     93            {
+     94              curState++;
+     95              curState = (curState > 7)? 0: curState;
+     96            }
+     97            else
+     98            {
+     99              curState--;
+    100              curState = ( curState < 0)? 7: curState;
+    101            }
+    102            P1 = (P1 & 0x0f ) | ( coil_state[curState] << 4 );  
+    103          }
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     hal_step_motor_drive             4      0      0
+       -> osal_stop_timerEx           4      0      0
+       -> osal_stop_timerEx           4      0      0
+       -> osal_set_event              4      0      0
+     hal_step_motor_init              0      0      0
+     hal_step_motor_round_trip        2      0      0
+       -> osal_start_reload_timer     4      0      0
+     hal_step_motor_start             0      0      9
+       -> osal_start_reload_timer     0      0     18
+     hal_step_motor_stop              2      0      0
+       -> osal_stop_timerEx           4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                     Bytes
+     --------------                     -----
+     _A_P1                                 1
+     P1SEL                                 1
+     P1DIR                                 1
+     coil_state                            8
+     target_steps                          2
+     stepped_steps                         2
+     stepping_direction                    1
+     stepping_mode                         1
+     curRoute                              1
+     route_trip_rout                      10
+     hal_step_motor_init                  12
+     hal_step_motor_start                 40
+     ?Subroutine2                          9
+     hal_step_motor_round_trip            51
+     ?Subroutine0                          7
+     ?Subroutine1                         14
+     hal_step_motor_stop                  18
+     hal_step_motor_drive                230
+     ?Subroutine3                         16
+     curState                              1
+     ?<Initializer for coil_state>         8
+     ?<Initializer for route_trip_rout>   10
+     ??hal_step_motor_init?relay           6
+     ??hal_step_motor_start?relay          6
+     ??hal_step_motor_round_trip?relay     6
+     ??hal_step_motor_stop?relay           6
+     ??hal_step_motor_drive?relay          6
+
+ 
+ 397 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  18 bytes in segment XDATA_I
+  18 bytes in segment XDATA_ID
+   8 bytes in segment XDATA_Z
+ 
+ 445 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+  26 bytes of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,330 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         13/Nov/2017  07:21:01 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\Source\ #
+#                          MyApp.c                                            #
+#    Command line       =  -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\FileInstall\ZStack-CC253 #
+#                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl #
+#                          assroom_NetWork\Source\MyApp.c -D ZTOOL_P1 -D      #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          LCD_SUPPORTED=DEBUG -lC D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork\CC2530DB\CoordinatorEB\List\ -lA  #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\ --diag_suppress Pe001,Pa010  #
+#                          -o D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\CoordinatorEB\Obj\ -e --no_code_motion        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\ -I D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k\CC2530DB\..\Source\ -I                           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\ZMain\TI2530DB\ -I                      #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\include\ -I        #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\target\CC2530EB\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\include\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\high_level\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\low_level\srf04\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\low_level\srf04 #
+#                          \single_chip\ -I D:\FileInstall\ZStack-CC2530-2.5. #
+#                          1a_GreenRoom\Projects\zstack\Samples\GreenClassroo #
+#                          m_NetWork\CC2530DB\..\..\..\..\..\Components\mt\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\ -I    #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\saddr\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\sdata\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\af\ -I           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\nwk\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sapi\ -I         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sys\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\zdo\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\ -I               #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\f8w\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\MyApp.lst                     #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\Obj\MyApp.r51                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork\Source\MyApp.c
+      1          #include "MyApp.h"
+      2          #include "osal.h"
+      3          #include "AF.h"
+      4          #include "hal_key.h"
+      5          #include "onboard.h"
+      6          #include "hal_key.h"
+      7          #include "hal_adc.h"
+      8          #include "KeyMsg.h"
+      9          
+     10          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          byte myApp_TaskID;  //任务ID
+   \                     myApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     12          
+     13          
+     14          
+     15          
+     16          /*********************************************************************
+     17           * 任务 MyApp 的初始化函数
+     18           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     19          void myApp_init(byte task_id )
+   \                     myApp_init:
+     20          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     21          
+     22            myApp_TaskID = task_id;   //将分配到的任务ID保存供其他地方使用
+   \   000006   90....       MOV     DPTR,#myApp_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+     23            
+     24            // SerialCom.init(task_id,PORT0,NULL);   // 用默认参数初始化串口：波特率=384000，无流控，使用PORT0,即UART0
+     25            keyMsg.init(task_id);
+   \   00000A                ; Setup parameters for indirect call
+   \   00000A   90....       MOV     DPTR,#keyMsg
+   \   00000D   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000010   12....       LCALL   ?CALL_IND
+     26          
+     27          }
+   \   000013   7F01         MOV     R7,#0x1
+   \   000015   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F583         MOV     DPH,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   22           RET
+     28          
+     29          /*********************************************************************
+     30           * 任务 MyApp的事件处理函数
+     31           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          uint16 myApp_event_loop(uint8 task_id, uint16 events )
+   \                     myApp_event_loop:
+     33          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     34            afIncomingMSGPacket_t *MSGpkt;
+     35            (void)task_id;  //  参数task_id未被引用，此语句用于避免编译器发出警告
+     36          
+     37            if ( events & SYS_EVENT_MSG )
+   \   000005   EB           MOV     A,R3
+   \   000006   5480         ANL     A,#0x80
+   \   000008   7028         JNZ     ??myApp_event_loop_0
+   \   00000A   803A         SJMP    ??myApp_event_loop_1
+     38            {
+     39              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( myApp_TaskID )) )
+     40              {
+     41                switch ( MSGpkt->hdr.event )
+   \                     ??myApp_event_loop_2:
+   \   00000C   8E82         MOV     DPL,R6
+   \   00000E   8F83         MOV     DPH,R7
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   64C0         XRL     A,#0xc0
+   \   000013   7016         JNZ     ??myApp_event_loop_3
+     42                {
+     43                  //case SERIAL_PORT_INCOMING_DATA:   //接收到串口消息。当串口接收到数据时，以该消息ID通知App
+     44                     //SerialCom.send( (uint8 *)(MSGpkt)+sizeof(osal_event_hdr_t),MSGpkt->hdr.status); // 将接收到消息通过串口输出
+     45                    //break;
+     46          
+     47                  case KEY_CHANGE:
+     48                    keyMsg.process( ((keyChange_t *)MSGpkt)->keys , ((keyChange_t *)MSGpkt)->state );
+   \   000015                ; Setup parameters for indirect call
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   FA           MOV     R2,A
+   \   000019   8E82         MOV     DPL,R6
+   \   00001B   8F83         MOV     DPH,R7
+   \   00001D   A3           INC     DPTR
+   \   00001E   A3           INC     DPTR
+   \   00001F   A3           INC     DPTR
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   F9           MOV     R1,A
+   \   000022   90....       MOV     DPTR,#keyMsg + 2
+   \   000025   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000028   12....       LCALL   ?CALL_IND
+     49                    break;
+     50                    
+     51                  default:
+     52                    break;
+     53                }
+     54          
+     55                // Release the memory
+     56                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??myApp_event_loop_3:
+   \   00002B                ; Setup parameters for call to function osal_msg_deallocate
+   \   00002B   EE           MOV     A,R6
+   \   00002C   FA           MOV     R2,A
+   \   00002D   EF           MOV     A,R7
+   \   00002E   FB           MOV     R3,A
+   \   00002F   12....       LCALL   ??osal_msg_deallocate?relay
+     57              }
+   \                     ??myApp_event_loop_0:
+   \   000032                ; Setup parameters for call to function osal_msg_receive
+   \   000032   90....       MOV     DPTR,#myApp_TaskID
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   F9           MOV     R1,A
+   \   000037   12....       LCALL   ??osal_msg_receive?relay
+   \   00003A   8A..         MOV     ?V0 + 0,R2
+   \   00003C   8B..         MOV     ?V0 + 1,R3
+   \   00003E   AE..         MOV     R6,?V0 + 0
+   \   000040   AF..         MOV     R7,?V0 + 1
+   \   000042   EE           MOV     A,R6
+   \   000043   4F           ORL     A,R7
+   \   000044   70C6         JNZ     ??myApp_event_loop_2
+     58            }
+     59          
+     60            return 0;
+   \                     ??myApp_event_loop_1:
+   \   000046   7A00         MOV     R2,#0x0
+   \   000048   7B00         MOV     R3,#0x0
+   \   00004A   7F02         MOV     R7,#0x2
+   \   00004C   02....       LJMP    ?BANKED_LEAVE_XDATA
+     61          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??myApp_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    myApp_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??myApp_event_loop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    myApp_event_loop
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     myApp_event_loop             0      0     10
+       -> osal_msg_deallocate     0      0     20
+       -> osal_msg_receive        0      0     20
+     myApp_init                   0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     myApp_TaskID                1
+     myApp_init                 24
+     ?Subroutine0                9
+     myApp_event_loop           79
+     ??myApp_init?relay          6
+     ??myApp_event_loop?relay    6
+
+ 
+ 112 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   1 byte  in segment XDATA_Z
+ 
+ 124 bytes of CODE  memory
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

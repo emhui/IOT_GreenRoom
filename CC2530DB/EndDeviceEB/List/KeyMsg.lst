@@ -1,0 +1,222 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         14/Nov/2017  12:52:10 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\Source\ #
+#                          KeyMsg.c                                           #
+#    Command line       =  -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f D:\FileInstall\ZStack-CC253 #
+#                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl #
+#                          assroom_NetWork\CC2530DB\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg (-DZIGBEEPRO -DSECURE=0               #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\FileInstall\ZStack-CC253 #
+#                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl #
+#                          assroom_NetWork\Source\KeyMsg.c -D NWK_AUTO_POLL   #
+#                          -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D              #
+#                          xPOWER_SAVING -lC D:\FileInstall\ZStack-CC2530-2.5 #
+#                          .1a_GreenRoom\Projects\zstack\Samples\GreenClassro #
+#                          om_NetWork\CC2530DB\EndDeviceEB\List\ -lA          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\EndDeviceEB\List\ --diag_suppress Pe001,Pa010    #
+#                          -o D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\EndDeviceEB\Obj\ -e --no_code_motion --debug  #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork\CC2530DB\ -I                      #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\Source\ -I D:\FileInstall\ZStack-CC2530-2.5.1 #
+#                          a_GreenRoom\Projects\zstack\Samples\GreenClassroom #
+#                          _NetWork\CC2530DB\..\..\..\ZMain\TI2530DB\ -I      #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\include\ -I        #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\target\CC2530EB\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\include\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\high_level\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\low_level\srf04\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\low_level\srf04 #
+#                          \single_chip\ -I D:\FileInstall\ZStack-CC2530-2.5. #
+#                          1a_GreenRoom\Projects\zstack\Samples\GreenClassroo #
+#                          m_NetWork\CC2530DB\..\..\..\..\..\Components\mt\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\ -I    #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\saddr\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\sdata\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\af\ -I           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\nwk\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sapi\ -I         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sys\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\zdo\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\ -I               #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\f8w\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\EndDeviceEB\List\KeyMsg.lst                      #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\EndDeviceEB\Obj\KeyMsg.r51                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork\Source\KeyMsg.c
+      1          #include "KeyMsg.h"
+      2          #include "OnBoard.h"
+      3          
+      4          static void init(uint8 task_id);  
+      5          static void process(uint8 keys, uint8 isShiftPressed); 
+      6          
+      7          KEY_MSG_t KeyMsg={
+      8            init,
+      9            process
+     10          };
+     11           
+     12          
+     13          /*********************************************************************
+     14           * @fn          KeyMsg.init()
+     15           *
+     16           * @brief       Key初始化。硬件的初始化在驱动层完成，本函数仅完成处理
+     17           *              Key消息的任务注册。
+     18           *
+     19           * @param       task_id: 处理Key消息的任务ID
+     20           *
+     21           * @return      none
+     22           */
+     23          static void init(uint8 task_id)
+     24          {
+     25            RegisterForKeys( task_id ); 
+     26          }
+     27          
+     28          /*********************************************************************
+     29           * @fn          KeyMsg.process()
+     30           *
+     31           * @brief       Key消息处理。
+     32           *
+     33           * @param       keys: 用户按键ID
+     34           *              isShiftPressed: =TRUE:按下了Shift key, =FALSE: 未按下Shift key
+     35           *
+     36           * @return      none
+     37           */
+     38          static void process(uint8 keys, uint8 isShiftPressed)
+     39          {
+     40            if(isShiftPressed)
+     41            {//根据需要加入按下shift+keys 的处理代码
+     42             
+     43            }
+     44            else
+     45            {// 没有按下shift key 
+     46              switch( keys & ~0x02 )
+     47              {
+     48              case KEY_OK:
+     49                Led.on(LED1);
+                       ^
+Error[Pe020]: identifier "Led" is undefined
+
+        Led.on(LED1);
+               ^
+"D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork\Source\KeyMsg.c",49  Error[Pe020]: 
+          identifier "LED1" is undefined
+     50                SerialCom.send( "LED1 is ON\n", sizeof("LED1 is ON\n") );
+                       ^
+Error[Pe020]: identifier "SerialCom" is undefined
+     51                break;
+     52              case KEY_CANCEL:
+     53                Led.off(LED1);
+     54                SerialCom.send( "LED1 is OFF\n", sizeof("LED1 is OFF\n") );      
+     55                break;
+     56              case KEY_UP:
+     57                SerialCom.send( "joy stick up\n", sizeof("joy stick up\n") );
+     58                break;
+     59              case KEY_DOWN:
+     60                SerialCom.send( "joy stick down\n", sizeof("joy stick down\n") );
+     61                break;
+     62              case KEY_LEFT:
+     63                SerialCom.send( "joy stick left\n", sizeof("joy stick left\n") );
+     64                break;
+     65              case KEY_RIGHT:
+     66                SerialCom.send( "joy stick right\n", sizeof("joy stick right\n") );
+     67                break;
+     68              case KEY_CENTER:
+     69                SerialCom.send( "joy stick center\n", sizeof("joy stick center\n") );
+     70                break;
+     71              }
+     72            }
+     73          }
+     74          
+
+Errors: 3
+Warnings: none

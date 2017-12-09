@@ -1,0 +1,451 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Nov/2017  11:12:13 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\Source\GreenRoom.c                             #
+#    Command line       =  -f "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\Source\GreenRoom.c" -D        #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC "D:\FileInstall\ZStack-CC2530 #
+#                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCla #
+#                          ssroom_NetWork 2.1\CC2530DB\EndDeviceEB\List\"     #
+#                          -lA "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\FileInstall\ZStack-CC2530-2.5.1 #
+#                          a_GreenRoom\Projects\zstack\Samples\GreenClassroom #
+#                          _NetWork 2.1\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\" -I "D:\FileInstall\ZStack-CC2530-2. #
+#                          5.1a_GreenRoom\Projects\zstack\Samples\GreenClassr #
+#                          oom_NetWork 2.1\CC2530DB\..\Source\" -I            #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRo #
+#                          om\Projects\zstack\Samples\GreenClassroom_NetWork  #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \high_level\" -I "D:\FileInstall\ZStack-CC2530-2.5 #
+#                          .1a_GreenRoom\Projects\zstack\Samples\GreenClassro #
+#                          om_NetWork 2.1\CC2530DB\..\..\..\..\..\Components\ #
+#                          mac\low_level\srf04\" -I                           #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\single_chip\" -I                          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\services\s #
+#                          addr\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\service #
+#                          s\sdata\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_ #
+#                          GreenRoom\Projects\zstack\Samples\GreenClassroom_N #
+#                          etWork 2.1\CC2530DB\..\..\..\..\..\Components\stac #
+#                          k\af\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k 2.1\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\stack\sec\ #
+#                          " -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoo #
+#                          m\Projects\zstack\Samples\GreenClassroom_NetWork   #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\List\GreenRoom.lst        #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\Obj\GreenRoom.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork 2.1\Source\GreenRoom.c
+      1          #include "GreenRoom.h"
+      2          #include "hal_types.h"
+      3          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      4          #include "hal_drivers.h"
+      5          #include "osal.h"
+      6          #include "hal_led.h"
+      7          #include "hal_light_detect.h"
+      8          
+      9          #define LOW  0x00
+     10          #define MID  0x01
+     11          #define HIGH 0x02
+     12          
+     13          extern bool changedshift;
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     14          bool body_state;
+   \                     body_state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     15          uint8 light_state;
+   \                     light_state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          bool switch_state;
+   \                     switch_state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     17          bool led_state;
+   \                     led_state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     18          void green_room_init( void );
+     19          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     20          void green_room_init( void ) {
+   \                     green_room_init:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     21            P0SEL &= ~BV(1);
+   \   000000   53F3FD       ANL     0xf3,#0xfd
+     22            P0DIR |= BV(1);
+   \   000003   43FD02       ORL     0xfd,#0x2
+     23            P0_1 = 1;
+   \   000006   D281         SETB    0x80.1
+     24            
+     25            P0SEL &= ~BV(3);
+   \   000008   53F3F7       ANL     0xf3,#0xf7
+     26            P0DIR |= BV(3);
+   \   00000B   43FD08       ORL     0xfd,#0x8
+     27            P0_3 = 1;
+   \   00000E   D283         SETB    0x80.3
+     28          }
+   \   000010   02....       LJMP    ?BRET
+   \   000013                REQUIRE P0SEL
+   \   000013                REQUIRE P0DIR
+   \   000013                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     29          void green_room_control( void ){
+   \                     green_room_control:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     30          	
+     31            if ( body_state && switch_state ) {
+   \   000004   90....       MOV     DPTR,#body_state
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   6020         JZ      ??green_room_control_0
+   \   00000A   90....       MOV     DPTR,#switch_state
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   601A         JZ      ??green_room_control_0
+     32              switch ( light_state ) {
+   \   000010   90....       MOV     DPTR,#light_state
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   14           DEC     A
+   \   000015   6009         JZ      ??green_room_control_1
+   \   000017   14           DEC     A
+   \   000018   600B         JZ      ??green_room_control_2
+   \   00001A   24FE         ADD     A,#-0x2
+   \   00001C   600C         JZ      ??green_room_control_0
+   \   00001E   800D         SJMP    ??green_room_control_3
+     33                  case LIGHT_LOW_STATE :
+     34                    open_all_led();
+   \                     ??green_room_control_1:
+   \   000020                ; Setup parameters for call to function open_all_led
+   \   000020   12....       LCALL   ??open_all_led?relay
+     35                    break;
+   \   000023   8008         SJMP    ??green_room_control_3
+     36                  case LIGHT_MID_STATE :
+     37                    open_half_led();
+   \                     ??green_room_control_2:
+   \   000025                ; Setup parameters for call to function open_half_led
+   \   000025   12....       LCALL   ??open_half_led?relay
+     38                    break;
+   \   000028   8003         SJMP    ??green_room_control_3
+     39                  case LIGHT_HIGH_STATE :
+     40                    close_led();
+   \                     ??green_room_control_0:
+   \   00002A                ; Setup parameters for call to function close_led
+   \   00002A   12....       LCALL   ??close_led?relay
+     41                    break;
+     42              }
+     43            } else {
+     44              close_led();
+     45            }
+     46            
+     47            if ( !body_state && !switch_state ) {
+   \                     ??green_room_control_3:
+   \   00002D   90....       MOV     DPTR,#body_state
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   7009         JNZ     ??green_room_control_4
+   \   000033   90....       MOV     DPTR,#switch_state
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   7003         JNZ     ??green_room_control_4
+     48              switch_state = true;
+   \   000039   7401         MOV     A,#0x1
+   \   00003B   F0           MOVX    @DPTR,A
+     49            }
+     50            
+     51          }
+   \                     ??green_room_control_4:
+   \   00003C   80..         SJMP    ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine2_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     52          
+     53          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D283         SETB    0x80.3
+   \   000002                REQUIRE ??Subroutine2_0
+   \   000002                ; // Fall through to label ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     54          void open_half_led() {
+   \                     open_half_led:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     55              led_state = true;
+   \   000004   12....       LCALL   ?Subroutine1 & 0xFFFF
+     56              HalLedSet( HAL_LED_1, led_state ); 
+     57              P0_1 = 0;
+     58              P0_3 = 1;
+   \                     ??CrossCallReturnLabel_0:
+   \   000007   80..         SJMP    ?Subroutine0
+   \   000009                REQUIRE _A_P0
+     59          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV     DPTR,#led_state
+   \   000003   7401         MOV     A,#0x1
+   \   000005   F0           MOVX    @DPTR,A
+   \   000006                ; Setup parameters for call to function HalLedSet
+   \   000006                ; Setup parameters for call to function HalLedSet
+   \   000006   FA           MOV     R2,A
+   \   000007   F9           MOV     R1,A
+   \   000008   12....       LCALL   ??HalLedSet?relay
+   \   00000B   C281         CLR     0x80.1
+   \   00000D   22           RET
+     60          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          void close_led() {
+   \                     close_led:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     62              led_state = false;
+   \   000004   90....       MOV     DPTR,#led_state
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+     63              HalLedSet( HAL_LED_1, led_state );
+   \   000009                ; Setup parameters for call to function HalLedSet
+   \   000009   FA           MOV     R2,A
+   \   00000A   7901         MOV     R1,#0x1
+   \   00000C   12....       LCALL   ??HalLedSet?relay
+     64              P0_1 = 1;
+   \   00000F   D281         SETB    0x80.1
+     65              P0_3 = 1;
+   \   000011   80..         SJMP    ?Subroutine0
+   \   000013                REQUIRE _A_P0
+     66          }
+     67          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          void open_all_led() {
+   \                     open_all_led:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     69              led_state = true;
+   \   000004   12....       LCALL   ?Subroutine1 & 0xFFFF
+     70              HalLedSet( HAL_LED_1, led_state ); 
+     71              P0_1 = 0;
+     72              P0_3 = 0;
+   \                     ??CrossCallReturnLabel_1:
+   \   000007   C283         CLR     0x80.3
+     73          }
+   \   000009   80..         SJMP    ??Subroutine2_0
+   \   00000B                REQUIRE _A_P0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??green_room_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    green_room_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??green_room_control?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    green_room_control
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??open_half_led?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    open_half_led
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??close_led?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    close_led
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??open_all_led?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    open_all_led
+
+   Maximum stack usage in bytes:
+
+     Function           ISTACK PSTACK XSTACK
+     --------           ------ ------ ------
+     close_led              2      0      0
+       -> HalLedSet         4      0      0
+     green_room_control     2      0      0
+       -> open_all_led      4      0      0
+       -> open_half_led     4      0      0
+       -> close_led         4      0      0
+     green_room_init        0      0      0
+     open_all_led           2      0      0
+       -> HalLedSet         4      0      0
+     open_half_led          2      0      0
+       -> HalLedSet         4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P0                         1
+     P0SEL                         1
+     P0DIR                         1
+     body_state                    1
+     light_state                   1
+     switch_state                  1
+     led_state                     1
+     green_room_init              19
+     green_room_control           62
+     ??Subroutine2_0               7
+     ?Subroutine0                  2
+     open_half_led                 9
+     ?Subroutine1                 14
+     close_led                    19
+     open_all_led                 11
+     ??green_room_init?relay       6
+     ??green_room_control?relay    6
+     ??open_half_led?relay         6
+     ??close_led?relay             6
+     ??open_all_led?relay          6
+
+ 
+ 143 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+   4 bytes in segment XDATA_Z
+ 
+ 173 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: none

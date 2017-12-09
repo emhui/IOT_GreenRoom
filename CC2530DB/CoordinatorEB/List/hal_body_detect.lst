@@ -1,0 +1,480 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         12/Nov/2017  15:14:11 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\Source\ #
+#                          hal_body_detect.c                                  #
+#    Command line       =  -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\FileInstall\ZStack-CC253 #
+#                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl #
+#                          assroom_NetWork\Source\hal_body_detect.c -D        #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC                         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\ -lA                          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\ --diag_suppress Pe001,Pa010  #
+#                          -o D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\CoordinatorEB\Obj\ -e --no_code_motion        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\ -I D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k\CC2530DB\..\Source\ -I                           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\ZMain\TI2530DB\ -I                      #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\include\ -I        #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\target\CC2530EB\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\include\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\high_level\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\low_level\srf04\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\low_level\srf04 #
+#                          \single_chip\ -I D:\FileInstall\ZStack-CC2530-2.5. #
+#                          1a_GreenRoom\Projects\zstack\Samples\GreenClassroo #
+#                          m_NetWork\CC2530DB\..\..\..\..\..\Components\mt\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\ -I    #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\saddr\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\sdata\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\af\ -I           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\nwk\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sapi\ -I         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sys\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\zdo\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\ -I               #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\f8w\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\hal_body_detect.lst           #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\Obj\hal_body_detect.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork\Source\hal_body_detect.c
+      1          #include "hal_drivers.h"
+      2          #include "hal_body_detect.h"
+      3          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      4          #include "osal.h"
+      5          #include "hal_mcu.h"
+      6          #include "body_detect_events.h"
+      7          #include "hal_step_motor.h"
+      8          #include "hal_led.h"
+      9          
+     10          extern uint8 GenericApp_TaskID;
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          static uint8 curState = NOBODY_STATE;
+   \                     curState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     12          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     13          void hal_body_detect_init( void )
+   \                     hal_body_detect_init:
+     14          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     15          /***********************    说明   ******************************************* 
+     16          * 我们将P1_2和P2_1用做人体传感器的输入引脚，并采用中断通信方式。其中：
+     17          * 1) P1_2为高电联触发，用于检测到有人活动时触发事件
+     18          * 2) P2_1为低电平触发，用于在没有人活动时触发事件
+     19          ******************************************************************************/
+     20            P0SEL &= ~BV(4); // 设置P0_4引脚功能为通用I/O
+   \   000000   53F3EF       ANL     0xf3,#0xef
+     21            P0DIR &= ~BV(4); 
+   \   000003   53FDEF       ANL     0xfd,#0xef
+     22            P0INP &= ~BV(4);
+   \   000006   538FEF       ANL     0x8f,#0xef
+     23          //  P0INP |= BV(4);
+     24            P2INP |= BV(5);
+   \   000009   43F720       ORL     0xf7,#0x20
+     25          
+     26          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE P0SEL
+   \   00000F                REQUIRE P0DIR
+   \   00000F                REQUIRE P0INP
+   \   00000F                REQUIRE P2INP
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void hal_body_detect_state_machine( void )
+   \                     hal_body_detect_state_machine:
+     29          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     30          
+     31            bool pinState;      
+     32            pinState = hal_detector_read();
+   \   000005   A284         MOV     C,0x80.4
+   \   000007   E4           CLR     A
+   \   000008   33           RLC     A
+   \   000009   FE           MOV     R6,A
+     33            HalLedSet( HAL_LED_2, pinState );
+   \   00000A                ; Setup parameters for call to function HalLedSet
+   \   00000A   FA           MOV     R2,A
+   \   00000B   7902         MOV     R1,#0x2
+   \   00000D   12....       LCALL   ??HalLedSet?relay
+     34          
+     35            switch( curState )
+   \   000010   90....       MOV     DPTR,#curState
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   600B         JZ      ??hal_body_detect_state_machine_0
+   \   000016   14           DEC     A
+   \   000017   601D         JZ      ??hal_body_detect_state_machine_1
+   \   000019   14           DEC     A
+   \   00001A   6034         JZ      ??hal_body_detect_state_machine_2
+   \   00001C   14           DEC     A
+   \   00001D   6047         JZ      ??hal_body_detect_state_machine_3
+   \   00001F   804D         SJMP    ??hal_body_detect_state_machine_4
+     36            {
+     37            case NOBODY_STATE:
+     38              if( pinState )  // 如果为高电平，即有人（活动）
+   \                     ??hal_body_detect_state_machine_0:
+   \   000021   EE           MOV     A,R6
+   \   000022   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000024   5048         JNC     ??hal_body_detect_state_machine_4
+     39              {
+     40                curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE
+   \   000026   7401         MOV     A,#0x1
+   \   000028   F0           MOVX    @DPTR,A
+     41                osal_set_event( GenericApp_TaskID, SOMEBODY_EVT );  // 通知应用层“有人”
+   \   000029                ; Setup parameters for call to function osal_set_event
+   \   000029   7A00         MOV     R2,#0x0
+   \   00002B   FB           MOV     R3,A
+   \   00002C   90....       MOV     DPTR,#GenericApp_TaskID
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F9           MOV     R1,A
+   \   000031   12....       LCALL   ??osal_set_event?relay
+   \   000034   8038         SJMP    ??hal_body_detect_state_machine_4
+     42              }
+     43              break;
+     44            case SOMEBODY_STATE:
+     45              if( !pinState ) // 如果为低电平，即没有人（活动）
+   \                     ??hal_body_detect_state_machine_1:
+   \   000036   EE           MOV     A,R6
+   \   000037   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000039   4033         JC      ??hal_body_detect_state_machine_4
+     46              { 
+     47                curState = SCAN_DELAY_STATE;  //切换到SCAN_DELAY_STATE
+   \   00003B   7402         MOV     A,#0x2
+   \   00003D   F0           MOVX    @DPTR,A
+     48                osal_start_timerEx( Hal_TaskID, HAL_SCAN_DELAY_FINISH_EVT,10000 ); //进行扫描延时
+   \   00003E                ; Setup parameters for call to function osal_start_timerEx
+   \   00003E   7C10         MOV     R4,#0x10
+   \   000040   7D27         MOV     R5,#0x27
+   \   000042   7A80         MOV     R2,#-0x80
+   \   000044   7B00         MOV     R3,#0x0
+   \   000046   90....       MOV     DPTR,#Hal_TaskID
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   F9           MOV     R1,A
+   \   00004B   12....       LCALL   ??osal_start_timerEx?relay
+   \   00004E   801E         SJMP    ??hal_body_detect_state_machine_4
+     49              }
+     50              break;
+     51            case SCAN_DELAY_STATE:
+     52              if( pinState ) // 如果为高电平，即扫描到有人（活动）
+   \                     ??hal_body_detect_state_machine_2:
+   \   000050   EE           MOV     A,R6
+   \   000051   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000053   5019         JNC     ??hal_body_detect_state_machine_4
+     53              { 
+     54                curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE，
+   \   000055   7401         MOV     A,#0x1
+   \   000057   F0           MOVX    @DPTR,A
+     55                osal_stop_timerEx(Hal_TaskID, HAL_SCAN_DELAY_FINISH_EVT);
+   \   000058                ; Setup parameters for call to function osal_stop_timerEx
+   \   000058   7A80         MOV     R2,#-0x80
+   \   00005A   7B00         MOV     R3,#0x0
+   \   00005C   90....       MOV     DPTR,#Hal_TaskID
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   F9           MOV     R1,A
+   \   000061   12....       LCALL   ??osal_stop_timerEx?relay
+   \   000064   8008         SJMP    ??hal_body_detect_state_machine_4
+     56              }   
+     57              break;
+     58            case AUTO_SCAN_STATE:
+     59             if( pinState ) // 如果为高电平，即扫描到有人（活动）
+   \                     ??hal_body_detect_state_machine_3:
+   \   000066   EE           MOV     A,R6
+   \   000067   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000069   5003         JNC     ??hal_body_detect_state_machine_4
+     60              { 
+     61                curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE
+   \   00006B   7401         MOV     A,#0x1
+   \   00006D   F0           MOVX    @DPTR,A
+     62              }      
+     63              break;     
+     64            }
+     65          
+     66          }
+   \                     ??hal_body_detect_state_machine_4:
+   \   00006E   7F01         MOV     R7,#0x1
+   \   000070   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000073                REQUIRE _A_P0
+     67          
+     68          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     69          bool hal_detector_read( void )
+   \                     hal_detector_read:
+     70          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     71            return P0_4;
+   \   000000   A284         MOV     C,0x80.4
+   \   000002   E4           CLR     A
+   \   000003   33           RLC     A
+   \   000004   F9           MOV     R1,A
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_P0
+     72          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void hal_scan_delay_event_process( void )
+   \                     hal_scan_delay_event_process:
+     74          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     75            curState = AUTO_SCAN_STATE;  //切换到AUTO_SCAN_STATE
+   \   000004   90....       MOV     DPTR,#curState
+   \   000007   7403         MOV     A,#0x3
+   \   000009   F0           MOVX    @DPTR,A
+     76            hal_step_motor_round_trip( 20 );  //启动自动扫描  
+   \   00000A                ; Setup parameters for call to function hal_step_motor_round_trip
+   \   00000A   7A14         MOV     R2,#0x14
+   \   00000C   7B00         MOV     R3,#0x0
+   \   00000E   12....       LCALL   ??hal_step_motor_round_trip?relay
+     77          }
+   \   000011                REQUIRE ?Subroutine0
+   \   000011                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     78          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     79          void hal_auto_scan_event_process( void )
+   \                     hal_auto_scan_event_process:
+     80          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     81            if( AUTO_SCAN_STATE == curState )
+   \   000004   90....       MOV     DPTR,#curState
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   6403         XRL     A,#0x3
+   \   00000A   700D         JNZ     ??hal_auto_scan_event_process_0
+     82            {
+     83              curState = NOBODY_STATE;  //切换到NOBODY_STATE
+   \   00000C   E4           CLR     A
+   \   00000D   F0           MOVX    @DPTR,A
+     84              osal_set_event( GenericApp_TaskID, NOBODY_EVT );  // 通知应用层“没人”
+   \   00000E                ; Setup parameters for call to function osal_set_event
+   \   00000E   FA           MOV     R2,A
+   \   00000F   7B02         MOV     R3,#0x2
+   \   000011   90....       MOV     DPTR,#GenericApp_TaskID
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F9           MOV     R1,A
+   \   000016   12....       LCALL   ??osal_set_event?relay
+     85            }
+     86          }
+   \                     ??hal_auto_scan_event_process_0:
+   \   000019   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_body_detect_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_body_detect_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_body_detect_state_machine?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_body_detect_state_machine
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_detector_read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_detector_read
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_scan_delay_event_process?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_scan_delay_event_process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_auto_scan_event_process?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_auto_scan_event_process
+     87          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     hal_auto_scan_event_process        2      0      0
+       -> osal_set_event                4      0      0
+     hal_body_detect_init               0      0      0
+     hal_body_detect_state_machine      0      0      9
+       -> HalLedSet                     0      0     18
+       -> osal_set_event                0      0     18
+       -> osal_start_timerEx            0      0     18
+       -> osal_stop_timerEx             0      0     18
+     hal_detector_read                  0      0      0
+     hal_scan_delay_event_process       2      0      0
+       -> hal_step_motor_round_trip     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     _A_P0                                    1
+     P0INP                                    1
+     P0SEL                                    1
+     P2INP                                    1
+     P0DIR                                    1
+     curState                                 1
+     hal_body_detect_init                    15
+     hal_body_detect_state_machine          115
+     hal_detector_read                        8
+     hal_scan_delay_event_process            17
+     ?Subroutine0                             7
+     hal_auto_scan_event_process             27
+     ??hal_body_detect_init?relay             6
+     ??hal_body_detect_state_machine?relay    6
+     ??hal_detector_read?relay                6
+     ??hal_scan_delay_event_process?relay     6
+     ??hal_auto_scan_event_process?relay      6
+
+ 
+ 189 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   5 bytes in segment SFR_AN
+   1 byte  in segment XDATA_Z
+ 
+ 219 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 5 bytes shared)
+   1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

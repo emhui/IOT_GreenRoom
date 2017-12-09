@@ -1,0 +1,785 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        29/Nov/2017  16:37:54 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro /
+//                          jects\zstack\Samples\GreenClassroom_NetWork       /
+//                          2.1\Source\hal_body_detect.c                      /
+//    Command line       =  -f "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom /
+//                          \Projects\zstack\Samples\GreenClassroom_NetWork   /
+//                          2.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg /
+//                          " (-DCPU32MHZ -DROOT=__near_func                  /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\CC2530DB\..\..\..\Tools\CC /
+//                          2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\Source\hal_body_detect.c"  /
+//                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D        /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\EndDeviceEB\List\" -lA               /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\EndDeviceEB\List\" --diag_suppress   /
+//                          Pe001,Pa010 -o "D:\FileInstall\ZStack-CC2530-2.5. /
+//                          1a_GreenRoom\Projects\zstack\Samples\GreenClassro /
+//                          om_NetWork 2.1\CC2530DB\EndDeviceEB\Obj\" -e      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\" -I "D:\FileInstall\ZStack-CC2530-2 /
+//                          .5.1a_GreenRoom\Projects\zstack\Samples\GreenClas /
+//                          sroom_NetWork 2.1\CC2530DB\..\Source\" -I         /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I         /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\hal\includ /
+//                          e\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Green /
+//                          Room\Projects\zstack\Samples\GreenClassroom_NetWo /
+//                          rk 2.1\CC2530DB\..\..\..\..\..\Components\hal\tar /
+//                          get\CC2530EB\" -I "D:\FileInstall\ZStack-CC2530-2 /
+//                          .5.1a_GreenRoom\Projects\zstack\Samples\GreenClas /
+//                          sroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\mac\include\" -I "D:\FileInstall\ZStack-CC253 /
+//                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC /
+//                          lassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Comp /
+//                          onents\mac\high_level\" -I                        /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\mac\low_le /
+//                          vel\srf04\" -I "D:\FileInstall\ZStack-CC2530-2.5. /
+//                          1a_GreenRoom\Projects\zstack\Samples\GreenClassro /
+//                          om_NetWork 2.1\CC2530DB\..\..\..\..\..\Components /
+//                          \mac\low_level\srf04\single_chip\" -I             /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\mt\" -I    /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\osal\inclu /
+//                          de\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gree /
+//                          nRoom\Projects\zstack\Samples\GreenClassroom_NetW /
+//                          ork 2.1\CC2530DB\..\..\..\..\..\Components\servic /
+//                          es\saddr\" -I "D:\FileInstall\ZStack-CC2530-2.5.1 /
+//                          a_GreenRoom\Projects\zstack\Samples\GreenClassroo /
+//                          m_NetWork 2.1\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\sdata\" -I "D:\FileInstall\ZStack-CC2530 /
+//                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl /
+//                          assroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\af\" -I "D:\FileInstall\ZStack-CC2530 /
+//                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl /
+//                          assroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\nwk\" -I "D:\FileInstall\ZStack-CC253 /
+//                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC /
+//                          lassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Comp /
+//                          onents\stack\sapi\" -I "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Co /
+//                          mponents\stack\sec\" -I                           /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\stack\sys\ /
+//                          " -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRo /
+//                          om\Projects\zstack\Samples\GreenClassroom_NetWork /
+//                           2.1\CC2530DB\..\..\..\..\..\Components\stack\zdo /
+//                          \" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR /
+//                          oom\Projects\zstack\Samples\GreenClassroom_NetWor /
+//                          k 2.1\CC2530DB\..\..\..\..\..\Components\zmac\"   /
+//                          -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom /
+//                          \Projects\zstack\Samples\GreenClassroom_NetWork   /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\" /
+//                           -Ohz --require_prototypes                        /
+//    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro /
+//                          jects\zstack\Samples\GreenClassroom_NetWork       /
+//                          2.1\CC2530DB\EndDeviceEB\List\hal_body_detect.s51 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_body_detect
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??hal_auto_scan_event_process?relay
+        FUNCTION ??hal_auto_scan_event_process?relay,0203H
+        PUBLIC ??hal_body_detect_init?relay
+        FUNCTION ??hal_body_detect_init?relay,0203H
+        PUBLIC ??hal_body_detect_state_machine?relay
+        FUNCTION ??hal_body_detect_state_machine?relay,0203H
+        PUBLIC ??hal_detector_read?relay
+        FUNCTION ??hal_detector_read?relay,0203H
+        PUBLIC ??hal_scan_delay_event_process?relay
+        FUNCTION ??hal_scan_delay_event_process?relay,0203H
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        PUBWEAK P2INP
+        PUBWEAK _A_P0
+        PUBLIC hal_auto_scan_event_process
+        FUNCTION hal_auto_scan_event_process,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC hal_body_detect_init
+        FUNCTION hal_body_detect_init,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC hal_body_detect_state_machine
+        FUNCTION hal_body_detect_state_machine,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC hal_detector_read
+        FUNCTION hal_detector_read,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC hal_scan_delay_event_process
+        FUNCTION hal_scan_delay_event_process,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+HalLedSet           SYMBOL "HalLedSet"
+osal_set_event      SYMBOL "osal_set_event"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+osal_stop_timerEx   SYMBOL "osal_stop_timerEx"
+hal_step_motor_round_trip SYMBOL "hal_step_motor_round_trip"
+??HalLedSet?relay   SYMBOL "?relay", HalLedSet
+??hal_step_motor_round_trip?relay SYMBOL "?relay", hal_step_motor_round_trip
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_stop_timerEx?relay SYMBOL "?relay", osal_stop_timerEx
+hal_auto_scan_event_process SYMBOL "hal_auto_scan_event_process"
+??hal_auto_scan_event_process?relay SYMBOL "?relay", hal_auto_scan_event_process
+hal_body_detect_init SYMBOL "hal_body_detect_init"
+??hal_body_detect_init?relay SYMBOL "?relay", hal_body_detect_init
+hal_body_detect_state_machine SYMBOL "hal_body_detect_state_machine"
+??hal_body_detect_state_machine?relay SYMBOL "?relay", hal_body_detect_state_machine
+hal_detector_read   SYMBOL "hal_detector_read"
+??hal_detector_read?relay SYMBOL "?relay", hal_detector_read
+hal_scan_delay_event_process SYMBOL "hal_scan_delay_event_process"
+??hal_scan_delay_event_process?relay SYMBOL "?relay", hal_scan_delay_event_process
+
+        EXTERN HalLedSet
+        FUNCTION HalLedSet,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_set_event
+        FUNCTION osal_set_event,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_stop_timerEx
+        FUNCTION osal_stop_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN hal_step_motor_round_trip
+        FUNCTION hal_step_motor_round_trip,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??HalLedSet?relay
+        FUNCTION ??HalLedSet?relay,00H
+        EXTERN ??hal_step_motor_round_trip?relay
+        FUNCTION ??hal_step_motor_round_trip?relay,00H
+        EXTERN ??osal_set_event?relay
+        FUNCTION ??osal_set_event?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN ??osal_stop_timerEx?relay
+        FUNCTION ??osal_stop_timerEx?relay,00H
+        EXTERN GenericApp_TaskID
+        EXTERN Hal_TaskID
+
+// D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork 2.1\Source\hal_body_detect.c
+//    1 #include "hal_drivers.h"
+//    2 #include "hal_body_detect.h"
+//    3 #include "iocc2530.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f7H
+// unsigned char volatile __sfr P2INP
+P2INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    4 #include "osal.h"
+//    5 #include "hal_mcu.h"
+//    6 #include "body_detect_events.h"
+//    7 #include "hal_step_motor.h"
+//    8 #include "hal_led.h"
+//    9 
+//   10 extern uint8 GenericApp_TaskID;
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   11 static uint8 curState = NOBODY_STATE;
+curState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   12 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   13 void hal_body_detect_init( void )
+hal_body_detect_init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function hal_body_detect_init
+        CODE
+//   14 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   15 /***********************    说明   ******************************************* 
+//   16 * 我们将P1_2和P2_1用做人体传感器的输入引脚，并采用中断通信方式。其中：
+//   17 * 1) P1_2为高电联触发，用于检测到有人活动时触发事件
+//   18 * 2) P2_1为低电平触发，用于在没有人活动时触发事件
+//   19 ******************************************************************************/
+//   20   P0SEL &= ~BV(4); // 设置P0_4引脚功能为通用I/O
+        ANL     0xf3,#0xef
+//   21   P0DIR &= ~BV(4); 
+        ANL     0xfd,#0xef
+//   22   P0INP &= ~BV(4);
+        ANL     0x8f,#0xef
+//   23 //  P0INP |= BV(4);
+//   24   P2INP |= BV(5);
+        ORL     0xf7,#0x20
+//   25 
+//   26 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P0INP
+        REQUIRE P2INP
+//   27 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   28 void hal_body_detect_state_machine( void )
+hal_body_detect_state_machine:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function hal_body_detect_state_machine
+        CODE
+//   29 {
+        FUNCALL hal_body_detect_state_machine, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hal_body_detect_state_machine, osal_set_event
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hal_body_detect_state_machine, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hal_body_detect_state_machine, osal_stop_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//   30 
+//   31   bool pinState;      
+//   32   pinState = hal_detector_read();
+        MOV     C,0x80.4
+        CLR     A
+        RLC     A
+        MOV     R6,A
+//   33   HalLedSet( HAL_LED_2, pinState );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,A
+        MOV     R1,#0x2
+        LCALL   ??HalLedSet?relay
+//   34 
+//   35   switch( curState )
+        MOV     DPTR,#curState
+        MOVX    A,@DPTR
+        JZ      ??hal_body_detect_state_machine_0
+        DEC     A
+        JZ      ??hal_body_detect_state_machine_1
+        DEC     A
+        JZ      ??hal_body_detect_state_machine_2
+        DEC     A
+        JZ      ??hal_body_detect_state_machine_3
+        SJMP    ??hal_body_detect_state_machine_4
+//   36   {
+//   37   case NOBODY_STATE:
+//   38     if( pinState )  // 如果为高电平，即有人（活动）
+??hal_body_detect_state_machine_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??hal_body_detect_state_machine_4
+//   39     {
+//   40       curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//   41       osal_set_event( GenericApp_TaskID, SOMEBODY_EVT );  // 通知应用层“有人”
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x0
+        MOV     R3,A
+        MOV     DPTR,#GenericApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+        SJMP    ??hal_body_detect_state_machine_4
+//   42     }
+//   43     break;
+//   44   case SOMEBODY_STATE:
+//   45     if( !pinState ) // 如果为低电平，即没有人（活动）
+??hal_body_detect_state_machine_1:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JC      ??hal_body_detect_state_machine_4
+//   46     { 
+//   47       curState = SCAN_DELAY_STATE;  //切换到SCAN_DELAY_STATE
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//   48       osal_start_timerEx( Hal_TaskID, HAL_SCAN_DELAY_FINISH_EVT,6000 ); //进行扫描延时
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#0x70
+        MOV     R5,#0x17
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        SJMP    ??hal_body_detect_state_machine_4
+//   49     }
+//   50     break;
+//   51   case SCAN_DELAY_STATE:
+//   52     if( pinState ) // 如果为高电平，即扫描到有人（活动）
+??hal_body_detect_state_machine_2:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??hal_body_detect_state_machine_4
+//   53     { 
+//   54       curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE，
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//   55       osal_stop_timerEx(Hal_TaskID, HAL_SCAN_DELAY_FINISH_EVT);
+        ; Setup parameters for call to function osal_stop_timerEx
+        MOV     R2,#-0x80
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_stop_timerEx?relay
+        SJMP    ??hal_body_detect_state_machine_4
+//   56     }   
+//   57     break;
+//   58   case AUTO_SCAN_STATE:
+//   59    if( pinState ) // 如果为高电平，即扫描到有人（活动）
+??hal_body_detect_state_machine_3:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??hal_body_detect_state_machine_4
+//   60     { 
+//   61       curState = SOMEBODY_STATE;  //切换到SOMEBODY_STATE
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//   62     }      
+//   63     break;     
+//   64   }
+//   65 
+//   66 }
+??hal_body_detect_state_machine_4:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+        REQUIRE _A_P0
+//   67 
+//   68 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   69 bool hal_detector_read( void )
+hal_detector_read:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function hal_detector_read
+        CODE
+//   70 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   71   return P0_4;
+        MOV     C,0x80.4
+        CLR     A
+        RLC     A
+        MOV     R1,A
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P0
+//   72 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   73 void hal_scan_delay_event_process( void )
+hal_scan_delay_event_process:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function hal_scan_delay_event_process
+        CODE
+//   74 {
+        FUNCALL hal_scan_delay_event_process, hal_step_motor_round_trip
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   75   curState = AUTO_SCAN_STATE;  //切换到AUTO_SCAN_STATE
+        MOV     DPTR,#curState
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//   76   hal_step_motor_round_trip( 20 );  //启动自动扫描  
+        ; Setup parameters for call to function hal_step_motor_round_trip
+        MOV     R2,#0x14
+        MOV     R3,#0x0
+        LCALL   ??hal_step_motor_round_trip?relay
+        CFI EndBlock cfiBlock3
+//   77 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+-5
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI DPH0 Frame(CFA_SP, 5)
+        POP     DPH
+        CFI CFA_SP SP+-4
+        CFI DPH0 SameValue
+        POP     DPL
+        CFI CFA_SP SP+-3
+        CFI DPL0 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+//   78 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   79 void hal_auto_scan_event_process( void )
+hal_auto_scan_event_process:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function hal_auto_scan_event_process
+        CODE
+//   80 {
+        FUNCALL hal_auto_scan_event_process, osal_set_event
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   81   if( AUTO_SCAN_STATE == curState )
+        MOV     DPTR,#curState
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??hal_auto_scan_event_process_0
+//   82   {
+//   83     curState = NOBODY_STATE;  //切换到NOBODY_STATE
+        CLR     A
+        MOVX    @DPTR,A
+//   84     osal_set_event( GenericApp_TaskID, NOBODY_EVT );  // 通知应用层“没人”
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,A
+        MOV     R3,#0x2
+        MOV     DPTR,#GenericApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+//   85   }
+//   86 }
+??hal_auto_scan_event_process_0:
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock5
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hal_body_detect_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hal_body_detect_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hal_body_detect_state_machine?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hal_body_detect_state_machine
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hal_detector_read?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hal_detector_read
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hal_scan_delay_event_process?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hal_scan_delay_event_process
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hal_auto_scan_event_process?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hal_auto_scan_event_process
+
+        END
+//   87 
+// 
+// 189 bytes in segment BANKED_CODE
+//  30 bytes in segment BANK_RELAYS
+//   5 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 219 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 5 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

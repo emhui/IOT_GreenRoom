@@ -1,0 +1,355 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         30/Nov/2017  18:16:53 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\Source\audio.c                                 #
+#    Command line       =  -f "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func                    #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\CC2530DB\..\..\..\Tools\CC253 #
+#                          0DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0         #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\FileInstall\ZStack-CC25 #
+#                          30-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC #
+#                          lassroom_NetWork 2.1\Source\audio.c" -D            #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC "D:\FileInstall\ZStack-CC2530 #
+#                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCla #
+#                          ssroom_NetWork 2.1\CC2530DB\EndDeviceEB\List\"     #
+#                          -lA "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "D:\FileInstall\ZStack-CC2530-2.5.1 #
+#                          a_GreenRoom\Projects\zstack\Samples\GreenClassroom #
+#                          _NetWork 2.1\CC2530DB\EndDeviceEB\Obj\" -e         #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\ #
+#                          Projects\zstack\Samples\GreenClassroom_NetWork     #
+#                          2.1\CC2530DB\" -I "D:\FileInstall\ZStack-CC2530-2. #
+#                          5.1a_GreenRoom\Projects\zstack\Samples\GreenClassr #
+#                          oom_NetWork 2.1\CC2530DB\..\Source\" -I            #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\include #
+#                          \" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRo #
+#                          om\Projects\zstack\Samples\GreenClassroom_NetWork  #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\hal\target\ #
+#                          CC2530EB\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a #
+#                          _GreenRoom\Projects\zstack\Samples\GreenClassroom_ #
+#                          NetWork 2.1\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \high_level\" -I "D:\FileInstall\ZStack-CC2530-2.5 #
+#                          .1a_GreenRoom\Projects\zstack\Samples\GreenClassro #
+#                          om_NetWork 2.1\CC2530DB\..\..\..\..\..\Components\ #
+#                          mac\low_level\srf04\" -I                           #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mac\low_lev #
+#                          el\srf04\single_chip\" -I                          #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\mt\" -I     #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\osal\includ #
+#                          e\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\services\s #
+#                          addr\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\service #
+#                          s\sdata\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_ #
+#                          GreenRoom\Projects\zstack\Samples\GreenClassroom_N #
+#                          etWork 2.1\CC2530DB\..\..\..\..\..\Components\stac #
+#                          k\af\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gre #
+#                          enRoom\Projects\zstack\Samples\GreenClassroom_NetW #
+#                          ork 2.1\CC2530DB\..\..\..\..\..\Components\stack\n #
+#                          wk\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k 2.1\CC2530DB\..\..\..\..\..\Components\stack\sap #
+#                          i\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR #
+#                          oom\Projects\zstack\Samples\GreenClassroom_NetWork #
+#                           2.1\CC2530DB\..\..\..\..\..\Components\stack\sec\ #
+#                          " -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoo #
+#                          m\Projects\zstack\Samples\GreenClassroom_NetWork   #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\sys\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\stack\zdo\" #
+#                           -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom #
+#                          \Projects\zstack\Samples\GreenClassroom_NetWork    #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\" -I   #
+#                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro #
+#                          jects\zstack\Samples\GreenClassroom_NetWork        #
+#                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"  #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\List\audio.lst            #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork         #
+#                          2.1\CC2530DB\EndDeviceEB\Obj\audio.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork 2.1\Source\audio.c
+      1          #include "audio.h"
+      2          #include "OSAL.h"
+      3          #include "hal_drivers.h"
+      4          #include "AF.h"
+      5          #include "ZDApp.h"
+      6          #include "ZDObject.h"
+      7          #include "ZDProfile.h"
+      8          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      9          
+     10          static void initAudioConfig(void);
+     11          static void palyAudioWel(void); // P0_0
+     12          static void playAudioExit(void); // P0_7
+     13          static void stopAudioWel(void);
+     14          static void stopAduioExit(void);
+     15           
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     16          AUDIO_t Audio = {
+   \                     Audio:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for Audio>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+     17            initAudioConfig,
+     18            palyAudioWel,
+     19            playAudioExit,
+     20            stopAudioWel,
+     21            stopAduioExit
+     22          };
+     23          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          static void initAudioConfig() {
+   \                     initAudioConfig:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     25            // P0_0 ²¥·Å»¶Ó­
+     26            // p0_7 ²¥·ÅÀë¿ª
+     27            
+     28            P0SEL &= ~BV(0);
+   \   000000   53F3FE       ANL     0xf3,#0xfe
+     29            P0DIR |= BV(0);
+   \   000003   43FD01       ORL     0xfd,#0x1
+     30            P0_0 = 1;
+   \   000006   D280         SETB    0x80.0
+     31            // P0INP |= BV(0);
+     32            
+     33            P0SEL &= ~BV(7);
+   \   000008   53F37F       ANL     0xf3,#0x7f
+     34            P0DIR |= BV(7);
+   \   00000B   43FD80       ORL     0xfd,#0x80
+     35            P0INP |= BV(7);
+   \   00000E   438F80       ORL     0x8f,#0x80
+     36            P0_7 = 1;
+   \   000011                REQUIRE ?Subroutine0
+   \   000011                REQUIRE P0SEL
+   \   000011                REQUIRE P0DIR
+   \   000011                REQUIRE _A_P0
+   \   000011                REQUIRE P0INP
+   \   000011                ; // Fall through to label ?Subroutine0
+     37          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D287         SETB    0x80.7
+   \   000002   02....       LJMP    ?BRET
+     38          
+     39          // palyAudioWel ²¥·Å"»¶Ó­"
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     40          static void palyAudioWel() {
+   \                     palyAudioWel:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     41            P0_0 = 0;
+   \   000000   C280         CLR     0x80.0
+     42          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+     43          
+     44          // palyAudioExit ²¥·Å"Àë¿ª"
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     45          static void playAudioExit() {
+   \                     playAudioExit:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     46            P0_7 = 0;
+   \   000000   C287         CLR     0x80.7
+     47          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+     48          
+     49          // stopAudioWel Í£Ö¹"»¶Ó­"
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     50          static void stopAudioWel() {
+   \                     stopAudioWel:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     51            P0_0 = 1;
+   \   000000   D280         SETB    0x80.0
+     52          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+     53          
+     54          // stopAudioExit Í£Ö¹"Àë¿ª"
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     55          static void stopAduioExit() {
+   \                     stopAduioExit:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     56            P0_7 = 1;
+   \   000000   80..         SJMP    ?Subroutine0
+   \   000002                REQUIRE _A_P0
+     57          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Audio>`:
+   \   000000   ....         DW ??initAudioConfig?relay
+   \   000002   ....         DW ??palyAudioWel?relay
+   \   000004   ....         DW ??playAudioExit?relay
+   \   000006   ....         DW ??stopAudioWel?relay
+   \   000008   ....         DW ??stopAduioExit?relay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??initAudioConfig?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    initAudioConfig
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??palyAudioWel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    palyAudioWel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??playAudioExit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    playAudioExit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??stopAudioWel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    stopAudioWel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??stopAduioExit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    stopAduioExit
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     initAudioConfig     0      0      0
+     palyAudioWel        0      0      0
+     playAudioExit       0      0      0
+     stopAduioExit       0      0      0
+     stopAudioWel        0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     _A_P0                       1
+     P0INP                       1
+     P0SEL                       1
+     P0DIR                       1
+     Audio                      10
+     initAudioConfig            17
+     ?Subroutine0                5
+     palyAudioWel                5
+     playAudioExit               5
+     stopAudioWel                5
+     stopAduioExit               2
+     ?<Initializer for Audio>   10
+     ??initAudioConfig?relay     6
+     ??palyAudioWel?relay        6
+     ??playAudioExit?relay       6
+     ??stopAudioWel?relay        6
+     ??stopAduioExit?relay       6
+
+ 
+ 39 bytes in segment BANKED_CODE
+ 30 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 10 bytes in segment XDATA_I
+ 10 bytes in segment XDATA_ID
+ 
+ 79 bytes of CODE  memory
+  0 bytes of DATA  memory (+ 4 bytes shared)
+ 10 bytes of XDATA memory
+
+Errors: none
+Warnings: none

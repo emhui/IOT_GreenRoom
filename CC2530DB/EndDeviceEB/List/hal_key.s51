@@ -1,0 +1,1423 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        25/Nov/2017  22:13:50 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro /
+//                          jects\zstack\Samples\GreenClassroom_NetWork       /
+//                          2.1\Source\hal_key.c                              /
+//    Command line       =  -f "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom /
+//                          \Projects\zstack\Samples\GreenClassroom_NetWork   /
+//                          2.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg /
+//                          " (-DCPU32MHZ -DROOT=__near_func                  /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\CC2530DB\..\..\..\Tools\CC /
+//                          2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0     /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\Source\hal_key.c" -D       /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\EndDeviceEB\List\" -lA               /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\EndDeviceEB\List\" --diag_suppress   /
+//                          Pe001,Pa010 -o "D:\FileInstall\ZStack-CC2530-2.5. /
+//                          1a_GreenRoom\Projects\zstack\Samples\GreenClassro /
+//                          om_NetWork 2.1\CC2530DB\EndDeviceEB\Obj\" -e      /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\" -I "D:\FileInstall\ZStack-CC2530-2 /
+//                          .5.1a_GreenRoom\Projects\zstack\Samples\GreenClas /
+//                          sroom_NetWork 2.1\CC2530DB\..\Source\" -I         /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I         /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\hal\includ /
+//                          e\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Green /
+//                          Room\Projects\zstack\Samples\GreenClassroom_NetWo /
+//                          rk 2.1\CC2530DB\..\..\..\..\..\Components\hal\tar /
+//                          get\CC2530EB\" -I "D:\FileInstall\ZStack-CC2530-2 /
+//                          .5.1a_GreenRoom\Projects\zstack\Samples\GreenClas /
+//                          sroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\mac\include\" -I "D:\FileInstall\ZStack-CC253 /
+//                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC /
+//                          lassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Comp /
+//                          onents\mac\high_level\" -I                        /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\mac\low_le /
+//                          vel\srf04\" -I "D:\FileInstall\ZStack-CC2530-2.5. /
+//                          1a_GreenRoom\Projects\zstack\Samples\GreenClassro /
+//                          om_NetWork 2.1\CC2530DB\..\..\..\..\..\Components /
+//                          \mac\low_level\srf04\single_chip\" -I             /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\mt\" -I    /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\osal\inclu /
+//                          de\" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_Gree /
+//                          nRoom\Projects\zstack\Samples\GreenClassroom_NetW /
+//                          ork 2.1\CC2530DB\..\..\..\..\..\Components\servic /
+//                          es\saddr\" -I "D:\FileInstall\ZStack-CC2530-2.5.1 /
+//                          a_GreenRoom\Projects\zstack\Samples\GreenClassroo /
+//                          m_NetWork 2.1\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\sdata\" -I "D:\FileInstall\ZStack-CC2530 /
+//                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl /
+//                          assroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\af\" -I "D:\FileInstall\ZStack-CC2530 /
+//                          -2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl /
+//                          assroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\nwk\" -I "D:\FileInstall\ZStack-CC253 /
+//                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenC /
+//                          lassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Comp /
+//                          onents\stack\sapi\" -I "D:\FileInstall\ZStack-CC2 /
+//                          530-2.5.1a_GreenRoom\Projects\zstack\Samples\Gree /
+//                          nClassroom_NetWork 2.1\CC2530DB\..\..\..\..\..\Co /
+//                          mponents\stack\sec\" -I                           /
+//                          "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pr /
+//                          ojects\zstack\Samples\GreenClassroom_NetWork      /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\stack\sys\ /
+//                          " -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRo /
+//                          om\Projects\zstack\Samples\GreenClassroom_NetWork /
+//                           2.1\CC2530DB\..\..\..\..\..\Components\stack\zdo /
+//                          \" -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenR /
+//                          oom\Projects\zstack\Samples\GreenClassroom_NetWor /
+//                          k 2.1\CC2530DB\..\..\..\..\..\Components\zmac\"   /
+//                          -I "D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom /
+//                          \Projects\zstack\Samples\GreenClassroom_NetWork   /
+//                          2.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\" /
+//                           -Ohz --require_prototypes                        /
+//    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Pro /
+//                          jects\zstack\Samples\GreenClassroom_NetWork       /
+//                          2.1\CC2530DB\EndDeviceEB\List\hal_key.s51         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_key
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HalKeyConfig?relay
+        FUNCTION ??HalKeyConfig?relay,0203H
+        PUBLIC ??HalKeyInit?relay
+        FUNCTION ??HalKeyInit?relay,0203H
+        PUBLIC ??HalKeyPoll?relay
+        FUNCTION ??HalKeyPoll?relay,0203H
+        PUBLIC ??HalKeyRead?relay
+        FUNCTION ??HalKeyRead?relay,0203H
+        PUBLIC ??isNewKey?relay
+        FUNCTION ??isNewKey?relay,0203H
+        PUBLIC ??myHalKeyConfig?relay
+        FUNCTION ??myHalKeyConfig?relay,0203H
+        PUBLIC HalKeyConfig
+        FUNCTION HalKeyConfig,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC HalKeyInit
+        FUNCTION HalKeyInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC HalKeyPoll
+        FUNCTION HalKeyPoll,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC HalKeyRead
+        FUNCTION HalKeyRead,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC Hal_KeyIntEnable
+        PUBWEAK P0DIR
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBWEAK P2DIR
+        PUBWEAK P2SEL
+        PUBWEAK _A_P0
+        PUBWEAK _A_P1
+        PUBWEAK _A_P2
+        PUBLIC isNewKey
+        FUNCTION isNewKey,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC keyConfig
+        PUBLIC myHalKeyConfig
+        FUNCTION myHalKeyConfig,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+OnBoard_SendKeys    SYMBOL "OnBoard_SendKeys"
+??OnBoard_SendKeys?relay SYMBOL "?relay", OnBoard_SendKeys
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+HalKeyConfig        SYMBOL "HalKeyConfig"
+??HalKeyConfig?relay SYMBOL "?relay", HalKeyConfig
+HalKeyInit          SYMBOL "HalKeyInit"
+??HalKeyInit?relay  SYMBOL "?relay", HalKeyInit
+HalKeyPoll          SYMBOL "HalKeyPoll"
+??HalKeyPoll?relay  SYMBOL "?relay", HalKeyPoll
+HalKeyRead          SYMBOL "HalKeyRead"
+??HalKeyRead?relay  SYMBOL "?relay", HalKeyRead
+isNewKey            SYMBOL "isNewKey"
+??isNewKey?relay    SYMBOL "?relay", isNewKey
+myHalKeyConfig      SYMBOL "myHalKeyConfig"
+??myHalKeyConfig?relay SYMBOL "?relay", myHalKeyConfig
+
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN OnBoard_SendKeys
+        FUNCTION OnBoard_SendKeys,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??OnBoard_SendKeys?relay
+        FUNCTION ??OnBoard_SendKeys?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN Hal_TaskID
+
+// D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork 2.1\Source\hal_key.c
+//    1 #include "hal_key.h"
+//    2 #include "my_hal_key_config.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DATA8
+        DS 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+// struct <unnamed> const __xdata_rom keyConfig[2]
+keyConfig:
+        DB 0
+        DB 2
+        DB 1
+        DB 0
+        DB 2
+        DB 1
+        DB 2
+        DB 0
+//    3 #include "hal_adc.h"
+//    4 #include "OnBoard.h"
+//    5 #include "hal_drivers.h"
+//    6 
+//    7 //#define NO_TASK_ID 0xFF
+//    8 
+//    9 #if (defined HAL_KEY) && (HAL_KEY == TRUE)
+//   10 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   11 bool Hal_KeyIntEnable = KEY_INPUT_INT_MODE;   
+Hal_KeyIntEnable:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   12 static bool HalKeyConfigured = FALSE;  // 按键是否初始化完成
+HalKeyConfigured:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   13 
+//   14 /**************************************************************************************************
+//   15  *                                       私有函数
+//   16  **************************************************************************************************/
+//   17 uint8 halSendKeys_Msg( uint8 keys, uint8 state );
+//   18 void myHalKeyConfig (void);
+//   19 bool isNewKey( uint8 keys );
+//   20 
+//   21 #if ( defined KEY_NUM) && (KEY_NUM > 0 )
+//   22   static uint8 halGetNomalKeyInput(uint8 port, uint8 pin);
+//   23 #endif
+//   24   
+//   25 #if ( JOY_KEY_CONFIGURED == TRUE )
+//   26   static uint8 halGetJoyKeyInput(uint8 adChannel);
+//   27 #endif
+//   28 #if ( KEY_INPUT_INT_MODE == TRUE ) 
+//   29   bool isKeyInt( uint8 port );
+//   30 #endif
+//   31 
+//   32 /**************************************************************************************************
+//   33  * @fn      HalKeyInit
+//   34  *
+//   35  * @brief   按键初始化。
+//   36  *          这是按键初始化第一阶段，其调用链为：main()->HalDriverInit()->HalKeyInit()，即在驱动初始化时
+//   37  *          被调用。
+//   38  *          本函数执行后，按键可以工作在查询模式。用户可以通过调用HalKeyRead()获取按键状态，这样就可以满足
+//   39  *          某些任务在初始化时需要获取用户按键动作的需要。
+//   40  *          第二阶段的初始化工作由函数myHalKeyConfig()完成。
+//   41  *
+//   42  * @param   None
+//   43  *
+//   44  * @return  None
+//   45  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   46 void HalKeyInit( void )
+HalKeyInit:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function HalKeyInit
+        CODE
+//   47 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//   48   uint8 i;
+//   49 /****  如果定义了KEY_NUM, 则初始化普通按键  ****/ 
+//   50 #if (defined KEY_NUM) && (KEY_NUM > 0)
+//   51   
+//   52   for( i = 0; i < KEY_NUM; i++)
+        MOV     R1,#0x0
+//   53   {
+//   54     switch (keyConfig[i].port)
+??HalKeyInit_0:
+        MOV     ?V0 + 0,R1
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,#keyConfig & 0xff
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,#(keyConfig >> 8) & 0xff
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JZ      ??HalKeyInit_1
+        DEC     A
+        JZ      ??HalKeyInit_2
+        DEC     A
+        JZ      ??HalKeyInit_3
+        SJMP    ??HalKeyInit_4
+//   55     {
+//   56     case MY_PORT0:
+//   57       P0SEL &= ~keyConfig[i].pin; 
+??HalKeyInit_1:
+        INC     DPTR
+        MOVX    A,@DPTR
+        CPL     A
+        ANL     0xf3,A
+//   58       P0DIR &= ~keyConfig[i].pin;
+        ANL     0xfd,A
+//   59       break;
+        SJMP    ??HalKeyInit_4
+//   60     case MY_PORT1:
+//   61       P1SEL &= ~keyConfig[i].pin; 
+??HalKeyInit_2:
+        INC     DPTR
+        MOVX    A,@DPTR
+        CPL     A
+        ANL     0xf4,A
+//   62       P1DIR &= ~keyConfig[i].pin;     
+        ANL     0xfe,A
+//   63       break;
+        SJMP    ??HalKeyInit_4
+//   64     case MY_PORT2:
+//   65       P2SEL &= ~keyConfig[i].pin; 
+??HalKeyInit_3:
+        INC     DPTR
+        MOVX    A,@DPTR
+        CPL     A
+        ANL     0xf5,A
+//   66       P2DIR &= ~keyConfig[i].pin;  
+        ANL     0xff,A
+//   67       break;
+//   68     }    
+//   69   }
+??HalKeyInit_4:
+        INC     R1
+        MOV     A,R1
+        CLR     C
+        SUBB    A,#0x2
+        JC      ??HalKeyInit_0
+        CFI EndBlock cfiBlock0
+//   70 #endif  
+//   71   
+//   72 /* 如果定义了JOY_KEY_CONFIGURED，则初始化 joy stick。joy stick 采用AD输入 */ 
+//   73 #if (JOY_KEY_CONFIGURED == TRUE)
+//   74   
+//   75       P0SEL |= BV(JOY_AD_CHANNEL);   // 设置为外设引脚，AD输入通道在P0
+//   76       P0INP |= BV(JOY_AD_CHANNEL);   // 设置为三态模式，即没有上/下拉电阻  
+//   77       
+//   78 #endif
+//   79 
+//   80 }
+        REQUIRE ?Subroutine0
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE P2SEL
+        REQUIRE P2DIR
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//   81 
+//   82 /**************************************************************************************************
+//   83  * @fn      HalKeyConfig
+//   84  *
+//   85  * @brief   按键配置。
+//   86  *          此函数一是为了与原样板工程保持兼容，二是将真正的按键配置工作，也就是第二阶段初始化工作推迟
+//   87  *          3s。其调用链为：main()->InitBoard( OB_READY )->HalKeyConfig()。
+//   88  *          在ZStack原系统中，此函数是为了完成key的第二阶段初始化，即：如果按键采用中断输入模式，则初始化
+//   89  *          中断控制器，否则，启动按键的周期性查询工作。
+//   90  *          我们的驱动对此函数进行了改造：将第二阶段的初始化工作推迟3s进行，以避免系统误将系统初始化时的按
+//   91  *          按键动作传给用户任务处理。
+//   92  *          第二阶段的初始化工作由函数myHalKeyConfig()完成。
+//   93  *
+//   94  * @param   None
+//   95  *
+//   96  * @return  None
+//   97  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   98 void HalKeyConfig (bool interruptEnable, halKeyCBack_t cback)
+HalKeyConfig:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function HalKeyConfig
+        CODE
+//   99 {
+        FUNCALL HalKeyConfig, osal_start_timerEx
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  100   (void)(cback);            // 在我们的配置代码中，不使用这两个参数，
+//  101   (void)(interruptEnable);  // 保留这两个参数只是为了与原系统兼容。本驱动不再采用原系统的按键回调机制
+//  102   osal_start_timerEx( Hal_TaskID, HAL_KEY_EVENT,3000);  //推迟3s触发hal任务的HAL_KEY_EVENT事件
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x48
+        MOV     R5,#0xb
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#Hal_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        CFI EndBlock cfiBlock2
+//  103   return ;
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+//  104 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+-5
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI DPH0 Frame(CFA_SP, 5)
+        POP     DPH
+        CFI CFA_SP SP+-4
+        CFI DPH0 SameValue
+        POP     DPL
+        CFI CFA_SP SP+-3
+        CFI DPL0 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+//  105 
+//  106 /**************************************************************************************************
+//  107  * @fn      myHalKeyConfig
+//  108  *
+//  109  * @brief   按键配置，即进行按键的第二阶段初始化。
+//  110  *          如果按键采用中断输入模式，则初始化其中断控制器，否则，启动按键的周期性查询工作。
+//  111  *          此函数是按键驱动初始化的第二阶段。其调用链为：
+//  112  *                HAL_KEY_EVENT事件发生->Hal_ProcessEvent()->HalKeyPoll()->myHalKeyConfig()
+//  113  *          按键的第一阶段初始化由HalKeyInit()完成。
+//  114  *   
+//  115  * @param   None
+//  116  *
+//  117  * @return  keys - current keys status
+//  118  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  119 void myHalKeyConfig (void)
+myHalKeyConfig:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function myHalKeyConfig
+        CODE
+//  120 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  121 
+//  122 #if ( KEY_INPUT_INT_MODE == TRUE )
+//  123   /**** 如果采用中断输入模式，则需要初始化其中断控制器 *****/
+//  124   uint8 i;
+//  125   uint8 temp;
+//  126   for( i = 0; i < KEY_NUM; i++ )
+//  127   {//扫描用户的按键配置数组
+//  128     switch (keyConfig[i].port)
+//  129     {
+//  130     case MY_PORT0:
+//  131       temp = PICTL;
+//  132       PICTL = ( temp & ~BV(0) ) | ( EDGE_TRIGGER_MODE << 0 );  // 设置边沿触发方式：上升沿或下降沿  
+//  133       P0IFG &= ( ~keyConfig[i].pin ); // 清除残留的中断标志
+//  134       P0IEN |= keyConfig[i].pin; // 开放相应引脚中断
+//  135       IEN1 |= BV(5); // 开放P0中断
+//  136       break;
+//  137     case MY_PORT1:
+//  138       if( keyConfig[i].pin < 0x10 )
+//  139       {// P1 bit0-bit3 中断触发方式
+//  140         temp = PICTL;
+//  141         PICTL = ( temp & ~BV(1) ) | ( EDGE_TRIGGER_MODE << 1);  // 设置边沿触发方式：上升沿或下降沿        
+//  142       }
+//  143       else
+//  144       {// P1 bit4-bit7 中断触发方式
+//  145         temp = PICTL;
+//  146         PICTL = ( temp & ~BV(2) ) | ( EDGE_TRIGGER_MODE << 2);  // 设置边沿触发方式：上升沿或下降沿        
+//  147       }
+//  148       
+//  149       P1IFG &= ( ~keyConfig[i].pin ); // 清除残留的中断标志
+//  150       P1IEN |= keyConfig[i].pin; // 开放相应引脚中断  
+//  151       IEN2 |= BV(4); // 开放P1中断   
+//  152       break;
+//  153     case MY_PORT2:
+//  154         temp = PICTL;
+//  155         PICTL = ( temp & ~BV(3) ) | ( EDGE_TRIGGER_MODE << 3);  // 设置边沿触发方式：上升沿或下降沿      
+//  156         P2IFG &= ( ~keyConfig[i].pin ); // 清除残留的中断标志
+//  157         P2IEN |= keyConfig[i].pin; // 开放相应引脚中断        
+//  158         IEN2 = BV(1); // 开放P2中断           
+//  159       break;
+//  160     }   
+//  161   }
+//  162 #endif
+//  163   HalKeyConfigured = TRUE;  // 按键两个阶段的初始化均已完成
+        MOV     DPTR,#HalKeyConfigured
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  164   return ;
+        SJMP    ?Subroutine1
+        CFI EndBlock cfiBlock4
+//  165 }
+//  166 
+//  167 
+//  168 
+//  169 
+//  170 /**************************************************************************************************
+//  171  * @fn      HalKeyRead
+//  172  *
+//  173  * @brief   读取当前按键状态。
+//  174  *          不管是按键工作在查询输入模式还是中断输入模式，应用程序都可以调用此函数读取当前按键状态。
+//  175  *          部分任务在初始化时就是调用该函数获知用户的按键操作从而决定如何初始化自己，如ZDApp任务。
+//  176  *
+//  177  * @param   None
+//  178  *
+//  179  * @return  keys - 当前按键状态
+//  180  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  181 uint8 HalKeyRead ( void )
+HalKeyRead:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function HalKeyRead
+        CODE
+//  182 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  183   uint8 keys = 0; //已按键集合
+        MOV     R1,#0x0
+//  184   uint8 keyState; //按键当前状态
+//  185   uint8 i;
+//  186 
+//  187 /****  如果定义了KEY_NUM, 则获取普通按键ID  ****/   
+//  188 #if (defined KEY_NUM) && (KEY_NUM > 0)
+//  189   
+//  190   for( i = 0; i < KEY_NUM; i++)
+        MOV     R4,#0x0
+//  191   {
+//  192     keyState = halGetNomalKeyInput( keyConfig[i].port, keyConfig[i].pin );  // 读取普通按键状态
+??HalKeyRead_0:
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,#keyConfig & 0xff
+        ADD     A,?V0 + 0
+        MOV     R2,A
+        MOV     A,#(keyConfig >> 8) & 0xff
+        ADDC    A,?V0 + 1
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R5,#0x0
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        JZ      ??HalKeyRead_1
+        DEC     A
+        JZ      ??HalKeyRead_2
+        DEC     A
+        JNZ     ??HalKeyRead_3
+        MOV     A,0xa0
+        SJMP    ??HalKeyRead_4
+??HalKeyRead_2:
+        MOV     A,0x90
+        SJMP    ??HalKeyRead_4
+??HalKeyRead_1:
+        MOV     A,0x80
+??HalKeyRead_4:
+        ANL     A,R0
+        MOV     R5,A
+//  193 
+//  194     if( !( keyState ^ keyConfig[i].polarity ) ) // 按键状态与极性异或后取反，其结果为真，则键按下，否则没有按下。
+??HalKeyRead_3:
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,#(keyConfig + 3) & 0xff
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,#((keyConfig + 3) >> 8) & 0xff
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,R5
+        JNZ     ??HalKeyRead_5
+//  195     {
+//  196       keys |= keyConfig[i].keyID; // 将按键状态转换为按键编码 
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,#0x0
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 0
+        LCALL   ?S_SHL
+        MOV     A,#(keyConfig + 2) & 0xff
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,#((keyConfig + 2) >> 8) & 0xff
+        ADDC    A,?V0 + 1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XCH     A,R1
+        ORL     A,R1
+        MOV     R1,A
+//  197     }
+//  198   }
+??HalKeyRead_5:
+        INC     R4
+        MOV     A,R4
+        CLR     C
+        SUBB    A,#0x2
+        JC      ??HalKeyRead_0
+//  199   
+//  200 #endif
+//  201   
+//  202 /* 如果定义了JOY_KEY_CONFIGURED，则获取joy stick ID */ 
+//  203 #if (JOY_KEY_CONFIGURED == TRUE)
+//  204   
+//  205   keys |= halGetJoyKeyInput(JOY_AD_CHANNEL);
+//  206   
+//  207 #endif 
+//  208 
+//  209   return keys;
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock5
+        REQUIRE _A_P0
+        REQUIRE _A_P1
+        REQUIRE _A_P2
+//  210 }
+//  211 
+//  212 
+//  213 /**************************************************************************************************
+//  214  * @fn      HalKeyPoll
+//  215  *
+//  216  * @brief   查询按键状态，如果有按键动作，则将按键包装成消息发送给上层用户任务进行处理。另外，本函数
+//  217  *          还承担按键的第二阶段初始化工作，即如果使用中断输入模式，则调用myHalKeyConfig()初始化中断
+//  218  *          控制器。
+//  219  *
+//  220  * @param   None
+//  221  *
+//  222  * @return  None
+//  223  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  224 void HalKeyPoll (void)
+HalKeyPoll:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function HalKeyPoll
+        CODE
+//  225 {
+        FUNCALL HalKeyPoll, HalKeyRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HalKeyPoll, isNewKey
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HalKeyPoll, OnBoard_SendKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  226   uint8 keys = 0;   //当前按键
+//  227   bool shiftKeyState = FALSE ; // 记录shift key状态，TRUE:按下，FALSE: 未按下
+//  228   
+//  229   if( !HalKeyConfigured ) //如果还没有初始化完
+        MOV     DPTR,#HalKeyConfigured
+        MOVX    A,@DPTR
+        JNZ     ??HalKeyPoll_0
+//  230   {
+//  231     myHalKeyConfig(); // 进行按键的第二阶段初始化
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  232     return;
+        SJMP    ??HalKeyPoll_1
+//  233   }
+//  234   keys = HalKeyRead(); // 读取按键状态
+??HalKeyPoll_0:
+        ; Setup parameters for call to function HalKeyRead
+        LCALL   ??HalKeyRead?relay
+        MOV     A,R1
+        MOV     R6,A
+//  235 
+//  236 /*** 如果配置了 shift key， 则检测 shift key是否按下 ***/
+//  237   
+//  238   
+//  239 #if ( KEY_INPUT_INT_MODE == TRUE )
+//  240   if( keys )  //如果采用中断输入模式，则直接将按键封装成消息发送
+//  241 #else    
+//  242  if( isNewKey(keys) )   //如果采用查询工作查式，进一步判断是否为新的按键
+        ; Setup parameters for call to function isNewKey
+        LCALL   ??isNewKey?relay
+        MOV     A,R1
+        JZ      ??HalKeyPoll_1
+//  243 #endif
+//  244  { // 如果是新的按键则发送给App
+//  245 #if (SHIF_KEY_CONFIGURED == TRUE)
+//  246   
+//  247   shiftKeyState = ( keys & MY_SHIFT_KEY_ID ) ? TRUE:FALSE;   // 判断shift key状态，TRUE:按下，FALSE: 未按下
+//  248   keys = keys & (~MY_SHIFT_KEY_ID);         // 清除按键表中的shift key对应的位
+//  249   
+//  250 #endif   
+//  251    OnBoard_SendKeys( keys, shiftKeyState );  //向应用App发送按键消息
+        ; Setup parameters for call to function OnBoard_SendKeys
+        MOV     R2,#0x0
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??OnBoard_SendKeys?relay
+??HalKeyPoll_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  252  }
+//  253  
+//  254   return ;
+//  255 }
+//  256 
+//  257 
+//  258 /**************************************************************************************************
+//  259  * @fn      isNewKey
+//  260  *
+//  261  * @brief  本函数判断是否为新的按键。
+//  262  *        当用户按住一个键的时间<0.8s，则认为是一次按键，超过0.8s，则认为是需要自动重复按键
+//  263  * @param   keys，当前按键状态
+//  264  *
+//  265  * @return  TRUE or FALSE
+//  266  **************************************************************************************************/
+//  267 #if ( KEY_INPUT_INT_MODE == FALSE ) 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  268 bool isNewKey( uint8 keys )
+isNewKey:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function isNewKey
+        CODE
+//  269 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R0,A
+//  270   static uint8 sameKeyCount = 0;   // 相同按键计数
+//  271   static uint8 preKey = 0;  // 上一次按键  
+//  272   if( keys == 0 )
+        MOV     DPTR,#??preKey
+        JNZ     ??isNewKey_0
+//  273   { // 没有按按键动作
+//  274     preKey = 0;
+        CLR     A
+        MOVX    @DPTR,A
+//  275     sameKeyCount = 0;
+        MOV     DPTR,#??sameKeyCount
+        MOVX    @DPTR,A
+//  276     return FALSE; 
+        MOV     R1,A
+        SJMP    ??isNewKey_1
+//  277   }
+//  278   if( keys != preKey )
+??isNewKey_0:
+        MOVX    A,@DPTR
+        XRL     A,R0
+        JZ      ??isNewKey_2
+//  279   { // 如果有按键动作，且与前一次按下的键不相同，则判定为新的按键
+//  280     preKey = keys;
+        MOV     A,R0
+        MOVX    @DPTR,A
+//  281     sameKeyCount = 0;
+        MOV     DPTR,#??sameKeyCount
+        CLR     A
+        MOVX    @DPTR,A
+//  282     return TRUE;
+        SJMP    ??isNewKey_3
+//  283   }
+//  284   if( (keys == preKey) && (sameKeyCount < KEY_REPETITION_INTERVAL) )
+??isNewKey_2:
+        MOV     DPTR,#??sameKeyCount
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x5
+        JNC     ??isNewKey_3
+//  285   { // 如果当前按键与前一次相同，且间隔时间 < KEY_REPETITION_INTERVAL*100 mS,则认为是同一次按键，不发送给App
+//  286     sameKeyCount++;
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//  287     return FALSE;
+        MOV     R1,#0x0
+        SJMP    ??isNewKey_1
+//  288   }
+//  289   if((keys == preKey) && (sameKeyCount >= KEY_REPETITION_INTERVAL) )
+//  290   {// 如果当前按键与前一次相同，且间隔时间 > KEY_REPETITION_INTERVAL*100mS, 则认为用户是要自动重复按键，发送给App
+//  291     return TRUE;    
+??isNewKey_3:
+        MOV     R1,#0x1
+//  292   }
+??isNewKey_1:
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock7
+//  293   return FALSE;
+//  294 }
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+??sameKeyCount:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+??preKey:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalKeyInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalKeyInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalKeyConfig?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalKeyConfig
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??myHalKeyConfig?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    myHalKeyConfig
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalKeyRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalKeyRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalKeyPoll?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalKeyPoll
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??isNewKey?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    isNewKey
+
+        END
+//  295 #endif
+//  296 
+//  297 /**************************************************************************************************
+//  298  * @fn      halGetNomalKeyInput
+//  299  *
+//  300  * @brief  读取普通按键输入状态。普通按键是指以高低电平为输入的按键。非普通按键是指以模拟信号为输入的按键
+//  301  *        当用户按住一个键的时间<0.8s，则认为是一次按键，超过0.8s，则认为是需要自动重复按键
+//  302  * @param   port：按键所连接的端口
+//  303 *           pin: 按键所连接的引脚
+//  304  *
+//  305  * @return  keyState： 按键状态，即哪个引脚有按键动作
+//  306  **************************************************************************************************/ 
+//  307 #if (defined KEY_NUM) && (KEY_NUM > 0)
+//  308 uint8 halGetNomalKeyInput(uint8 port, uint8 pin)
+//  309 {
+//  310     uint8 keyState = 0;
+//  311     switch (port)
+//  312     {
+//  313     case MY_PORT0:
+//  314       keyState =  ( P0 & pin ); // 读取P0口按键状态      
+//  315       break;
+//  316     case MY_PORT1:
+//  317       keyState =  ( P1 & pin ); // 读取P1口按键状态          
+//  318       break;
+//  319     case MY_PORT2:
+//  320       keyState =  ( P2 & pin ); // 读取P2口按键状态       
+//  321       break;    
+//  322     }  
+//  323   return keyState;
+//  324 }
+//  325 #endif
+//  326 
+//  327 
+//  328 
+//  329 /**************************************************************************************************
+//  330  * @fn      halGetJoyKeyInput
+//  331  *
+//  332  * @brief   读取joy stick 按键输入状态。joy stick采用模拟信号输入。
+//  333  *
+//  334  * @param   adChannel：joy stick所接入的模拟通道号
+//  335  *
+//  336  * @return  keyID - 用户按键所对应的编码
+//  337  **************************************************************************************************/
+//  338 #if (JOY_KEY_CONFIGURED == TRUE)
+//  339 uint8 halGetJoyKeyInput(uint8 adChannel)
+//  340 {
+//  341 
+//  342   uint8 keyID = 0;   
+//  343   uint8 adc;
+//  344 
+//  345   uint8 preKeyID; 
+//  346   uint8 i;
+//  347 
+//  348   /* 连续读取两次按键状态，如果两次均相同，则认为是有效按键动作 */
+//  349   do
+//  350   {
+//  351     preKeyID = keyID;    /* save previouse key reading */
+//  352 
+//  353     adc = HalAdcRead ( adChannel, HAL_ADC_RESOLUTION_8 );
+//  354 
+//  355     for( i = 0; i<5; i++ )
+//  356     {
+//  357       if( (adc >= joyStickADRange[i].lowerLimit) && (adc <= joyStickADRange[i].upperLimit) )
+//  358       {
+//  359         keyID |= joyStickADRange[i].keyID;  // 将模拟输入值映射为按键ID
+//  360       }    
+//  361     }  
+//  362   } while (keyID != preKeyID);
+//  363 
+//  364   return keyID;
+//  365 }
+//  366 #endif
+//  367 
+//  368 
+//  369 #if ( P0_INT_ENABLE == TRUE )
+//  370 /**************************************************************************************************
+//  371  * @fn      halKeyPort0Isr
+//  372  *
+//  373  * @brief   Port0 ISR
+//  374  *
+//  375  * @param
+//  376  *
+//  377  * @return
+//  378  **************************************************************************************************/
+//  379 HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+//  380 {
+//  381 
+//  382   HAL_ENTER_ISR();
+//  383 
+//  384   if( isKeyInt( MY_PORT0) ) // 如果是P0的按键中断
+//  385   { 
+//  386     osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, KEY_REPETITION_INTERVAL); //延迟读取按键，即消抖
+//  387   }
+//  388   
+//  389   CLEAR_SLEEP_MODE();
+//  390   HAL_EXIT_ISR();
+//  391 }  
+//  392 #endif
+//  393 
+//  394 #if ( P1_INT_ENABLE == TRUE )
+//  395 /**************************************************************************************************
+//  396  * @fn      halKeyPort1Isr
+//  397  *
+//  398  * @brief   Port1 ISR
+//  399  *
+//  400  * @param
+//  401  *
+//  402  * @return
+//  403  **************************************************************************************************/      
+//  404 HAL_ISR_FUNCTION( halKeyPort1Isr, P1INT_VECTOR )
+//  405 {
+//  406 
+//  407   HAL_ENTER_ISR();
+//  408 
+//  409   if( isKeyInt(MY_PORT1) ) // 如果是P1的按键中断
+//  410   { 
+//  411     osal_start_timerEx ( Hal_TaskID, HAL_KEY_EVENT, KEY_REPETITION_INTERVAL ); //延迟读取按键，即消抖
+//  412   }
+//  413   
+//  414   CLEAR_SLEEP_MODE();
+//  415   HAL_EXIT_ISR();
+//  416 }  
+//  417 #endif
+//  418 
+//  419 
+//  420 #if ( P2_INT_ENABLE == TRUE )
+//  421 /**************************************************************************************************
+//  422  * @fn      halKeyPort2Isr
+//  423  *
+//  424  * @brief   Port2 ISR
+//  425  *
+//  426  * @param
+//  427  *
+//  428  * @return
+//  429  **************************************************************************************************/      
+//  430 HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
+//  431 {
+//  432 
+//  433   HAL_ENTER_ISR();
+//  434 
+//  435   if( isKeyInt(MY_PORT2) ) // 如果是P2的按键中断
+//  436   { 
+//  437     osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, KEY_REPETITION_INTERVAL); //延迟读取按键，即消抖
+//  438   }
+//  439   
+//  440   CLEAR_SLEEP_MODE();
+//  441   HAL_EXIT_ISR();
+//  442 }   
+//  443 #endif
+//  444   
+//  445 
+//  446 
+//  447 #if ( KEY_INPUT_INT_MODE == TRUE )
+//  448 
+//  449 /**************************************************************************************************
+//  450  * @fn      isKeyInt
+//  451  *
+//  452  * @brief   判断中断源是否为按键，如果是则同时清除相应标志位
+//  453  *
+//  454  * @param   None
+//  455  *
+//  456  * @return  isKeyInt - 如果按键产生的中断，则返回TRUE, 否则为FALSE 
+//  457  **************************************************************************************************/
+//  458 bool isKeyInt( uint8 port )
+//  459 {
+//  460   uint8 i;
+//  461   bool isKeyInt = FALSE;
+//  462  for( i = 0; i < KEY_NUM; i++ )
+//  463   {
+//  464     if( port == keyConfig[i].port )
+//  465     {
+//  466       switch (keyConfig[i].port)
+//  467       {
+//  468       case MY_PORT0:
+//  469         isKeyInt |= ( P0IFG & keyConfig[i].pin ) ? TRUE: FALSE;
+//  470         if( isKeyInt )
+//  471         {
+//  472           P0IFG &= ~keyConfig[i].pin; // 清除P0端口对应引脚的中断标志
+//  473           P0IF = 0; // 清除P0的总中断标志
+//  474         }
+//  475         break;
+//  476       case MY_PORT1:
+//  477         isKeyInt |= ( P1IFG & keyConfig[i].pin ) ? TRUE: FALSE;
+//  478         if( isKeyInt )
+//  479         {
+//  480           P1IFG &= ~keyConfig[i].pin; // 清除P0端口对应引脚的中断标志
+//  481           P1IF = 0; // 清除P0的总中断标志
+//  482         }        
+//  483         break;   
+//  484       case MY_PORT2:
+//  485         isKeyInt |= ( P2IFG & keyConfig[i].pin ) ? TRUE: FALSE;
+//  486         if( isKeyInt )
+//  487         {
+//  488           P2IFG &= ~keyConfig[i].pin; // 清除P0端口对应引脚的中断标志
+//  489           P2IF = 0; // 清除P0的总中断标志
+//  490         }         
+//  491         break;
+//  492       }     
+//  493     }
+//  494   }
+//  495 
+//  496  return isKeyInt;
+//  497 
+//  498 }
+//  499 
+//  500 /**************************************************************************************************
+//  501  * @fn      HalKeyEnterSleep
+//  502  *
+//  503  * @brief  - Get called to enter sleep mode
+//  504  *
+//  505  * @param
+//  506  *
+//  507  * @return
+//  508  **************************************************************************************************/
+//  509 void HalKeyEnterSleep ( void )
+//  510 {
+//  511 }
+//  512 
+//  513 /**************************************************************************************************
+//  514  * @fn      HalKeyExitSleep
+//  515  *
+//  516  * @brief   - Get called when sleep is over
+//  517  *
+//  518  * @param
+//  519  *
+//  520  * @return  - return saved keys
+//  521  **************************************************************************************************/
+//  522 uint8 HalKeyExitSleep ( void )
+//  523 {
+//  524   /* Wake up and read keys */
+//  525   return ( HalKeyRead () );
+//  526 }
+//  527 
+//  528 #endif
+//  529 
+//  530 
+//  531 #else
+//  532 
+//  533 
+//  534 void HalKeyInit(void){}
+//  535 void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback){}
+//  536 uint8 HalKeyRead(void){ return 0;}
+//  537 void HalKeyPoll(void){}
+//  538 
+//  539 #endif /* HAL_KEY */
+// 
+// 342 bytes in segment BANKED_CODE
+//  36 bytes in segment BANK_RELAYS
+//   9 bytes in segment SFR_AN
+//   8 bytes in segment XDATA_ROM_C
+//   4 bytes in segment XDATA_Z
+// 
+// 378 bytes of CODE  memory
+//   8 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 9 bytes shared)
+//   4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

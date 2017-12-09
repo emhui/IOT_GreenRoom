@@ -1,0 +1,300 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         12/Nov/2017  15:14:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\Source\ #
+#                          hal_light_detect.c                                 #
+#    Command line       =  -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\FileInstall\ZStack-CC253 #
+#                          0-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenCl #
+#                          assroom_NetWork\Source\hal_light_detect.c -D       #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC                         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\ -lA                          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\ --diag_suppress Pe001,Pa010  #
+#                          -o D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\CoordinatorEB\Obj\ -e --no_code_motion        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\ -I D:\FileInstall\ZStack-CC2530-2.5.1a_Green #
+#                          Room\Projects\zstack\Samples\GreenClassroom_NetWor #
+#                          k\CC2530DB\..\Source\ -I                           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\ZMain\TI2530DB\ -I                      #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\include\ -I        #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\hal\target\CC2530EB\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\include\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\high_level\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\mac\low_level\srf04\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\mac\low_level\srf04 #
+#                          \single_chip\ -I D:\FileInstall\ZStack-CC2530-2.5. #
+#                          1a_GreenRoom\Projects\zstack\Samples\GreenClassroo #
+#                          m_NetWork\CC2530DB\..\..\..\..\..\Components\mt\   #
+#                          -I D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\P #
+#                          rojects\zstack\Samples\GreenClassroom_NetWork\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\ -I    #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\saddr\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\services\sdata\ -I     #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\af\ -I           #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\nwk\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sapi\ -I         #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sec\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\sys\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\stack\zdo\ -I          #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\ -I               #
+#                          D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\..\..\..\..\..\Components\zmac\f8w\ -Ohz         #
+#                          --require_prototypes                               #
+#    List file          =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\List\hal_light_detect.lst          #
+#    Object file        =  D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Proj #
+#                          ects\zstack\Samples\GreenClassroom_NetWork\CC2530D #
+#                          B\CoordinatorEB\Obj\hal_light_detect.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\FileInstall\ZStack-CC2530-2.5.1a_GreenRoom\Projects\zstack\Samples\GreenClassroom_NetWork\Source\hal_light_detect.c
+      1          #include "hal_drivers.h"
+      2          #include "hal_light_detect.h"
+      3          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      4          #include "osal.h"
+      5          #include "hal_mcu.h"
+      6          #include "body_detect_events.h"
+      7          #include "hal_led.h"
+      8          
+      9          extern uint8 GenericApp_TaskID;
+     10          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     11          void hal_light_detect_init( void )
+   \                     hal_light_detect_init:
+     12          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     13          /***********************    说明   ******************************************* 
+     14          * 1) P0_6为低电平触发，用于检测到有光照强触发事件
+     15          * 2) P0_6为高电平触发，用于在没有光照弱触发事件
+     16          ******************************************************************************/
+     17            P0SEL &= ~BV(6); // 设置P0_6引脚功能为通用I/O
+   \   000000   53F3BF       ANL     0xf3,#0xbf
+     18            P0DIR &= ~BV(6); 
+   \   000003   53FDBF       ANL     0xfd,#0xbf
+     19            P0INP &= ~BV(6);
+   \   000006   538FBF       ANL     0x8f,#0xbf
+     20            
+     21          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+     22          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void hal_light_detect_state_machine( void )
+   \                     hal_light_detect_state_machine:
+     24          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     25          
+     26            bool pinState;      
+     27            pinState = hal_light_detector_read();
+     28          
+     29            if ( !pinState ) {
+   \   000004   A286         MOV     C,0x80.6
+   \   000006   7A00         MOV     R2,#0x0
+   \   000008   4004         JC      ??hal_light_detect_state_machine_0
+     30              osal_set_event( GenericApp_TaskID, LIGHT_HIGH_EVT );  // 通知应用层“光很强”
+   \   00000A                ; Setup parameters for call to function osal_set_event
+   \   00000A   7B04         MOV     R3,#0x4
+   \   00000C   8002         SJMP    ??hal_light_detect_state_machine_1
+     31            } else {
+     32              osal_set_event( GenericApp_TaskID, LIGHT_LOW_EVT ); // 通知应用层“光很弱”
+   \                     ??hal_light_detect_state_machine_0:
+   \   00000E                ; Setup parameters for call to function osal_set_event
+   \   00000E   7B08         MOV     R3,#0x8
+   \                     ??hal_light_detect_state_machine_1:
+   \   000010   90....       MOV     DPTR,#GenericApp_TaskID
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   F9           MOV     R1,A
+   \   000015   12....       LCALL   ??osal_set_event?relay
+     33            }
+     34            
+     35          }
+   \   000018   D083         POP     DPH
+   \   00001A   D082         POP     DPL
+   \   00001C   02....       LJMP    ?BRET
+   \   00001F                REQUIRE _A_P0
+     36          
+     37          
+     38          // 返回光敏的结果
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     39          bool hal_light_detector_read( void )
+   \                     hal_light_detector_read:
+     40          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     41            return P0_6;
+   \   000000   A286         MOV     C,0x80.6
+   \   000002   E4           CLR     A
+   \   000003   33           RLC     A
+   \   000004   F9           MOV     R1,A
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_P0
+     42          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_light_detect_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_light_detect_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_light_detect_state_machine?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_light_detect_state_machine
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_light_detector_read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_light_detector_read
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     hal_light_detect_init              0      0      0
+     hal_light_detect_state_machine     2      0      0
+       -> osal_set_event                4      0      0
+       -> osal_set_event                4      0      0
+     hal_light_detector_read            0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     _A_P0                                     1
+     P0INP                                     1
+     P0SEL                                     1
+     P0DIR                                     1
+     hal_light_detect_init                    12
+     hal_light_detect_state_machine           31
+     hal_light_detector_read                   8
+     ??hal_light_detect_init?relay             6
+     ??hal_light_detect_state_machine?relay    6
+     ??hal_light_detector_read?relay           6
+
+ 
+ 51 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 
+ 69 bytes of CODE memory
+  0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none
